@@ -29,14 +29,14 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html { font-size: 18px; scroll-behavior: smooth; }
 
     body {
       background: var(--white);
       color: var(--black);
       font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
       font-weight: 300;
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -67,8 +67,8 @@
     /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 520px;
+      grid-template-columns: 1fr 3fr;
+      min-height: 560px;
       border-bottom: 3px solid var(--black);
     }
     @media (max-width: 600px) {
@@ -99,9 +99,9 @@
 
     h1 {
       font-family: 'IBM Plex Sans', Helvetica, sans-serif;
-      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
       font-weight: 500;
-      line-height: 1.05;
+      line-height: 1.1;
       letter-spacing: -0.03em;
     }
     h1 .nick {
@@ -112,7 +112,7 @@
 
     .subtitle {
       margin-top: calc(var(--unit) * 2.5);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 300;
       color: var(--grey-4);
       line-height: 2;
@@ -203,9 +203,9 @@
 
     .section-label {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.62rem;
+      font-size: 1rem;
       font-weight: 400;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--red);
       margin-bottom: calc(var(--unit) * 3);
@@ -214,7 +214,7 @@
 
     h2 {
       font-family: 'IBM Plex Sans', Helvetica, sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       font-weight: 500;
       letter-spacing: -0.02em;
       line-height: 1.2;
@@ -222,15 +222,15 @@
     }
     h3 {
       font-family: 'IBM Plex Sans', Helvetica, sans-serif;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       font-weight: 500;
       margin-bottom: calc(var(--unit) * 1);
       letter-spacing: -0.01em;
     }
 
     p {
-      font-size: 0.93rem;
-      line-height: 1.75;
+      font-size: 1.05rem;
+      line-height: 1.8;
       color: var(--grey-4);
       margin-bottom: calc(var(--unit) * 2);
     }
@@ -258,7 +258,7 @@
       gap: calc(var(--unit) * 5) calc(var(--unit) * 6);
     }
     @media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
-    .service-item p { font-size: 0.88rem; }
+    .service-item p { font-size: 1rem; }
     .service-link {
       display: inline-block;
       margin-top: calc(var(--unit) * 1);
@@ -319,7 +319,7 @@
       margin-top: 6px;
       justify-self: center;
     }
-    .inprogress-list p { font-size: 0.88rem; }
+    .inprogress-list p { font-size: 1rem; }
 
     /* TIMELINE */
     .traj-list { list-style: none; margin-top: calc(var(--unit) * 2); }
@@ -329,7 +329,7 @@
       gap: 0 calc(var(--unit) * 3);
       padding: calc(var(--unit) * 2) 0;
       border-top: 1px solid var(--grey-2);
-      font-size: 0.88rem;
+      font-size: 1rem;
       color: var(--grey-4);
       align-items: baseline;
     }
@@ -349,7 +349,7 @@
       gap: 0 calc(var(--unit) * 3);
       padding: calc(var(--unit) * 2) 0;
       border-top: 1px solid var(--grey-2);
-      font-size: 0.88rem;
+      font-size: 1rem;
       align-items: baseline;
     }
     @media (max-width: 480px) {
@@ -389,9 +389,9 @@
       color: var(--white);
       padding: calc(var(--unit) * 7) var(--pad);
     }
-    .contact-block .section-label { color: var(--grey-4); }
+    .contact-block .section-label { color: var(--white); font-size: 1rem; }
     .contact-block h2 { color: var(--white); }
-    .contact-block p { color: var(--grey-3); font-size: 0.88rem; }
+    .contact-block p { color: var(--grey-3); font-size: 1rem; }
     .contact-block a { color: var(--white); text-decoration-color: var(--grey-4); }
     .contact-block a:hover { color: var(--red); }
     .contact-email {
@@ -465,9 +465,8 @@
       PER AFEGIR LA FOTO:
       1. Posa el fitxer de la foto a la mateixa carpeta: ca/joan.jpg
       2. Substitueix el bloc .photo-placeholder per:
-         <img src="../img/2020-04-10 -003.jpg" alt="Joan Linux Martínez">
+         <img src="joan.jpg" alt="Joan Linux Martínez">
     -->
-         <img src="../img/2020-04-10-003.jpg" alt="Joan Linux Martínez">
     <div class="photo-placeholder">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="24" cy="18" r="8" stroke="#999" stroke-width="1.5"/>
