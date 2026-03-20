@@ -19,7 +19,7 @@
   <meta http-equiv="Expires" content="0">
   <link rel="stylesheet" href="../css/style.css?v=20260321">
 </head>
-<body>
+<body id="top">
 
 <nav class="lang-nav">
   <a href="/">CA</a>
@@ -51,10 +51,37 @@
 </div>
 
 <main>
+<select class="side-nav-mobile" onchange="document.querySelector(this.value).scrollIntoView({behavior:'smooth'});this.selectedIndex=0;">
+  <option value="" disabled selected>Navegar a...</option>
+  <option value="#quien-soy">Quién soy</option>
+  <option value="#lo-que-hago">Lo que hago</option>
+  <option value="#comunicacion-cultural">Comunicación cultural</option>
+  <option value="#proyectos-en-curso">Proyectos en curso</option>
+  <option value="#obras-publicadas">Obras publicadas</option>
+  <option value="#trayectoria">Trayectoria</option>
+  <option value="#prensa">Prensa</option>
+  <option value="#contacto">Contacto</option>
+</select>
+<div class="page-body">
+<nav class="side-nav" aria-label="Navegación">
+  <span class="side-nav-label">Navegación</span>
+  <a href="#quien-soy">Quién soy</a>
+  <a href="#lo-que-hago">Lo que hago</a>
+  <a href="#comunicacion-cultural" class="nav-comm">Comunicación cultural</a>
+  <a href="#proyectos-en-curso">Proyectos en curso</a>
+  <a href="#obras-publicadas">Obras publicadas</a>
+  <a href="#trayectoria">Trayectoria</a>
+  <a href="#prensa">Prensa</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+<div class="page-content">
 <div class="wrap">
 
   <section>
-    <span class="section-label">Quién soy</span>
+    <div class="section-header">
+      <span class="section-label" id="quien-soy">Quién soy</span>
+      <a href="#top" class="back-top" aria-label="Volver arriba" title="Volver arriba">↑</a>
+    </div>
     <p>Nací en Barcelona en 1972 y crecí en Subirats (Alt Penedès), en un ambiente familiar marcado por la cerámica, la pintura y la escultura de mis padres. A los 15 años volví a Barcelona para estudiar Artes Gráficas, compaginándolo con fanzines, revistas independientes y una pasión por la fotografía que desde entonces no he dejado de sostener.</p>
     <p>Soy fotógrafo, editor gráfico y activista cultural vinculado al barrio de Nou Barris. Llevo más de veinte años trabajando en fotografía cultural: blues, jazz, artes escénicas, festivales, calle. Trabajo de manera artesanal con fotografía analógica —del 35 mm al gran formato 10×8"— revelando y haciendo copias yo mismo en mi estudio-laboratorio dentro de la <a href="https://naubostik.com" target="_blank" rel="noopener">Nau Bostik</a>.</p>
     <div class="pull-quote">La fotografía no es inocente. Por eso importa.</div>
@@ -63,7 +90,10 @@
   </section>
 
   <section>
-    <span class="section-label">Lo que hago</span>
+    <div class="section-header">
+      <span class="section-label" id="lo-que-hago">Lo que hago</span>
+      <a href="#top" class="back-top" aria-label="Volver arriba" title="Volver arriba">↑</a>
+    </div>
     <div class="services-grid">
       <div class="service-item">
         <h3>Fotografía de encargo</h3>
@@ -89,8 +119,11 @@
   </section>
 
   <!-- COMUNICACIÓN CULTURAL -->
-  <section class="comm-section">
-    <span class="section-label">Comunicación cultural</span>
+  <section class="comm-section" id="comunicacion-cultural">
+    <div class="section-header">
+      <span class="section-label" id="comunicacion-cultural">Comunicación cultural</span>
+      <a href="#top" class="back-top" aria-label="Volver arriba" title="Volver arriba">↑</a>
+    </div>
     <h2>De principio a fin.</h2>
     <p>Fotografías que funcionan. Webs que comunican. Redes sociales que no parecen redes sociales. Planes estratégicos que se pueden ejecutar. Automatismos que ahorran tiempo sin perder la voz propia.</p>
     <p>Trabajo con artistas, managers, discográficas, promotoras, festivales y salas que necesitan a alguien que entienda tanto la imagen como la tecnología — y que sepa cómo conectar las dos cosas.</p>
@@ -98,7 +131,10 @@
   </section>
 
   <section>
-    <span class="section-label">Proyectos en curso</span>
+    <div class="section-header">
+      <span class="section-label" id="proyectos-en-curso">Proyectos en curso</span>
+      <a href="#top" class="back-top" aria-label="Volver arriba" title="Volver arriba">↑</a>
+    </div>
     <ul class="inprogress-list">
       <li>
         <div class="inprogress-dot"></div>
@@ -120,7 +156,10 @@
   </section>
 
   <section>
-    <span class="section-label">Obras publicadas</span>
+    <div class="section-header">
+      <span class="section-label" id="obras-publicadas">Obras publicadas</span>
+      <a href="#top" class="back-top" aria-label="Volver arriba" title="Volver arriba">↑</a>
+    </div>
     <h2>Libros</h2>
     <ul class="books-list">
       <li><span class="book-year">2026</span><div><div class="book-title"><a href="https://www.112books.eu/producte/la-sacsejada-interior-antropoformologies-iii/" target="_blank" rel="noopener">La sacsejada interior: Antropoformologies III</a></div><p class="book-desc">Tercer volumen de la serie. Un recorrido visual y textual que explora la fragilidad, la tensión y los límites de la mirada a través de la fotografía y la escritura fragmentada.</p></div></li>
@@ -136,7 +175,10 @@
   </section>
 
   <section>
-    <span class="section-label">Trayectoria</span>
+    <div class="section-header">
+      <span class="section-label" id="trayectoria">Trayectoria</span>
+      <a href="#top" class="back-top" aria-label="Volver arriba" title="Volver arriba">↑</a>
+    </div>
     <ul class="traj-list">
       <li><span class="traj-year">2010–hoy</span><span>Fotógrafo profesional · <a href="https://pocallum.cat" target="_blank" rel="noopener"><strong>pocallum.cat</strong></a></span></li>
       <li><span class="traj-year">2017–hoy</span><span>Profesor de fotografía analógica y procesos alternativos en <a href="https://llumatics.com" target="_blank" rel="noopener"><strong>Llumàtics</strong></a></span></li>
@@ -155,7 +197,10 @@
   </section>
 
   <section>
-    <span class="section-label">Prensa</span>
+    <div class="section-header">
+      <span class="section-label" id="prensa">Prensa</span>
+      <a href="#top" class="back-top" aria-label="Volver arriba" title="Volver arriba">↑</a>
+    </div>
     <ul class="press-list">
       <li><span class="press-source">CulturaB</span><a href="https://culturab.cat/noticies/barri-prosperitat-tenim-escenes-blues-mes-importants-europa/" target="_blank" rel="noopener">Retratos de 40 años de Blues en Barcelona</a></li>
       <li><span class="press-source">CulturaB</span><a href="https://culturab.cat/noticies/tres-llibres-retraten-barcelona-no-timagines/" target="_blank" rel="noopener">Tres libros que retratan una Barcelona que no te imaginas</a></li>
@@ -172,6 +217,8 @@
     <a href="https://instagram.com/linuxbcn" target="_blank" rel="noopener">@linuxbcn</a>
   </div>
 
+</div>
+</div>
 </div>
 </main>
 
