@@ -54,7 +54,7 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
         email_label: 'Correu electrònic', email_placeholder: 'hola@exemple.com',
         privacy_text: 'Accepto la ',
         privacy_link_text: 'política de privacitat',
-        privacy_url: 'https://about.pocallum.cat/privacitat',
+        privacy_url: 'https://pocallum.cat/contacte/politica-de-ptivacitat-avis-legal/',
         subject: 'Consulta des de about.pocallum.cat',
         body_intro: 'Hola Joan,\n\nT\'escric des del formulari de about.pocallum.cat amb la informació següent:\n\n',
         label_data: 'Data límit', label_pressupost: 'Pressupost', label_extras: 'Serveis complementaris'
@@ -90,7 +90,7 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
         email_label: 'Email', email_placeholder: 'hello@example.com',
         privacy_text: 'I accept the ',
         privacy_link_text: 'privacy policy',
-        privacy_url: 'https://about.pocallum.cat/en/privacy',
+        privacy_url: 'https://pocallum.cat/contacte/politica-de-ptivacitat-avis-legal/',
         subject: 'Enquiry from about.pocallum.cat',
         body_intro: 'Hi Joan,\n\nI\'m writing from the about.pocallum.cat form:\n\n',
         label_data: 'Deadline', label_pressupost: 'Budget', label_extras: 'Additional services'
@@ -126,7 +126,7 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
         email_label: 'Correo electrónico', email_placeholder: 'hola@ejemplo.com',
         privacy_text: 'Acepto la ',
         privacy_link_text: 'política de privacidad',
-        privacy_url: 'https://about.pocallum.cat/es/privacidad',
+        privacy_url: 'https://pocallum.cat/contacte/politica-de-ptivacitat-avis-legal/',
         subject: 'Consulta desde about.pocallum.cat',
         body_intro: 'Hola Joan,\n\nTe escribo desde el formulario de about.pocallum.cat:\n\n',
         label_data: 'Fecha límite', label_pressupost: 'Presupuesto', label_extras: 'Servicios complementarios'
