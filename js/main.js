@@ -502,9 +502,15 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
   function sv(id, v) { var el = document.getElementById(id); if (el) el.value = v; }
 
   // ── Init ─────────────────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', function () {
+  function initWizard() {
     var btn = document.getElementById('btn-wizard');
     if (btn) btn.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWizard);
+  } else {
+    initWizard();
+  }
 
 })();
