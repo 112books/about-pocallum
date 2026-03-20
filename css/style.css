@@ -110,7 +110,7 @@ strong { font-weight: 500; color: var(--black); }
 /* Contenidor principal de dues columnes */
 .page-body {
   display: grid;
-  grid-template-columns: 185px 1fr;
+  grid-template-columns: 1fr 3fr;
   align-items: start;
   max-width: 100%;
 }
