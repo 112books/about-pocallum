@@ -529,7 +529,7 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
   if (!listId) return;
 
   var feedUrl = feeds[listId];
-  var apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl) + '&count=5';
+  var apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
 
   fetch(apiUrl)
     .then(function (r) { return r.json(); })
@@ -539,7 +539,7 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
         list.innerHTML = '';
         return;
       }
-      list.innerHTML = data.items.map(function (item) {
+      list.innerHTML = data.items.slice(0, 5).map(function (item) {
         var date = item.pubDate ? new Date(item.pubDate).toLocaleDateString('ca-ES', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
         return '<li>' +
           '<a href="' + item.link + '" target="_blank" rel="noopener" class="article-link">' + item.title + '</a>' +
