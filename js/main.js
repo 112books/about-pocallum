@@ -514,3 +514,41 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
   }
 
 })();
+// ─── Articles via RSS ─────────────────────────────────────────
+(function () {
+  var feeds = {
+    'articles-list-ca': 'https://pocallum.cat/feed/',
+    'articles-list-en': 'https://pocallum.cat/en/feed/',
+    'articles-list-es': 'https://pocallum.cat/es/feed/'
+  };
+
+  var listId = null;
+  for (var id in feeds) {
+    if (document.getElementById(id)) { listId = id; break; }
+  }
+  if (!listId) return;
+
+  var feedUrl = feeds[listId];
+  var apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl) + '&count=5';
+
+  fetch(apiUrl)
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var list = document.getElementById(listId);
+      if (!data.items || !data.items.length) {
+        list.innerHTML = '';
+        return;
+      }
+      list.innerHTML = data.items.map(function (item) {
+        var date = item.pubDate ? new Date(item.pubDate).toLocaleDateString('ca-ES', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+        return '<li>' +
+          '<a href="' + item.link + '" target="_blank" rel="noopener" class="article-link">' + item.title + '</a>' +
+          (date ? '<span class="article-meta">' + date + '</span>' : '') +
+          '</li>';
+      }).join('');
+    })
+    .catch(function () {
+      var list = document.getElementById(listId);
+      if (list) list.innerHTML = '';
+    });
+})();
