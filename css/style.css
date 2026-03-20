@@ -113,6 +113,11 @@ strong { font-weight: 500; color: var(--black); }
   grid-template-columns: 1fr 3fr;
   align-items: start;
   max-width: 100%;
+  border-top: none;
+}
+
+.page-content {
+  min-width: 0;
 }
 
 /* MENÚ LATERAL ESQUERRE */
@@ -187,9 +192,6 @@ strong { font-weight: 500; color: var(--black); }
 }
 
 /* COLUMNA DE CONTINGUT */
-.page-content {
-  min-width: 0;
-}
 
 .page-content .wrap {
   max-width: 100%;
