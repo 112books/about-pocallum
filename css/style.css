@@ -74,3 +74,30 @@ strong { font-weight: 500; color: var(--black); }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .hero, .wrap > section, .contact-block, .wrap > .links-bar { animation: fadeUp 0.5s ease both; }
 .hero { animation-delay: 0.00s; } .wrap > section:nth-child(1) { animation-delay: 0.06s; } .wrap > section:nth-child(2) { animation-delay: 0.10s; } .wrap > section:nth-child(3) { animation-delay: 0.14s; } .wrap > section:nth-child(4) { animation-delay: 0.18s; } .wrap > section:nth-child(5) { animation-delay: 0.22s; } .wrap > section:nth-child(6) { animation-delay: 0.26s; } .wrap > .links-bar { animation-delay: 0.30s; } .contact-block { animation-delay: 0.34s; }
+
+
+/*
+  COMUNICACIÓ CULTURAL — secció + botó
+*/
+.comm-section p { max-width: 560px; }
+.comm-btn {
+  display: inline-block;
+  margin-top: calc(var(--unit) * 4);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid var(--red);
+  color: var(--red);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.comm-btn:hover {
+  background: var(--red);
+  color: var(--white);
+  text-decoration: none;
+}
