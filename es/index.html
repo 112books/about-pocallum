@@ -14,91 +14,14 @@
   <link rel="alternate" hreflang="es" href="https://about.pocallum.cat/es/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --black: #0a0a0a; --white: #ffffff; --grey-1: #f5f5f5; --grey-2: #e0e0e0;
-      --grey-3: #999999; --grey-4: #555555; --red: #cc0000;
-      --col: 720px; --pad: 2rem; --unit: 8px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 18px; scroll-behavior: smooth; }
-    body { background: var(--white); color: var(--black); font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-weight: 300; line-height: 1.65; -webkit-font-smoothing: antialiased; }
-    .lang-nav { border-bottom: 1px solid var(--grey-2); padding: calc(var(--unit) * 2) var(--pad); display: flex; justify-content: flex-end; gap: 1.5rem; }
-    .lang-nav a { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.12em; text-decoration: none; color: var(--grey-3); transition: color 0.15s; }
-    .lang-nav a:hover { color: var(--black); }
-    .lang-nav a.active { color: var(--black); border-bottom: 1px solid var(--black); padding-bottom: 1px; }
-    .hero { display: grid; grid-template-columns: 1fr 3fr; min-height: 560px; border-bottom: 3px solid var(--black); }
-    @media (max-width: 600px) { .hero { grid-template-columns: 1fr; min-height: auto; } .hero-img { min-height: 260px; order: -1; } }
-    .hero-text { padding: calc(var(--unit) * 8) var(--pad) calc(var(--unit) * 6); display: flex; flex-direction: column; justify-content: space-between; }
-    .site-tag { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; font-weight: 400; letter-spacing: 0.16em; color: var(--grey-3); text-transform: uppercase; display: block; margin-bottom: calc(var(--unit) * 2); }
-    h1 { font-family: 'IBM Plex Sans', Helvetica, sans-serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; }
-    h1 .nick { font-weight: 300; color: var(--grey-3); font-style: italic; }
-    .subtitle { margin-top: calc(var(--unit) * 2.5); font-size: 1rem; font-weight: 300; color: var(--grey-4); line-height: 2; }
-    .subtitle span { display: block; }
-    .hero-cta { margin-top: calc(var(--unit) * 4); display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .btn { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.5rem 1rem; border: 1px solid var(--black); color: var(--white); background: var(--black); white-space: nowrap; transition: background 0.15s, color 0.15s, border-color 0.15s; }
-    .btn:hover { background: var(--red); border-color: var(--red); color: var(--white); }
-    .btn.outline { background: transparent; color: var(--black); }
-    .btn.outline:hover { background: var(--black); color: var(--white); }
-    .hero-img { position: relative; background: var(--grey-1); overflow: hidden; display: flex; flex-direction: column; }
-    .hero-img img { width: 100%; flex: 1; object-fit: cover; object-position: center top; display: block; filter: grayscale(15%); }
-    .hero-img figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; font-weight: 300; letter-spacing: 0.1em; color: var(--grey-3); text-transform: uppercase; padding: 0.5rem 0.8rem; background: var(--white); border-top: 1px solid var(--grey-2); text-align: right; }
-    .wrap { max-width: var(--col); margin: 0 auto; padding: 0 var(--pad); }
-    section { padding: calc(var(--unit) * 6) 0; border-bottom: 1px solid var(--grey-2); }
-    section:last-of-type { border-bottom: none; }
-    .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: calc(var(--unit) * 3); display: block; }
-    h2 { font-family: 'IBM Plex Sans', Helvetica, sans-serif; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: calc(var(--unit) * 2); }
-    h3 { font-family: 'IBM Plex Sans', Helvetica, sans-serif; font-size: 1.05rem; font-weight: 500; margin-bottom: calc(var(--unit) * 1); letter-spacing: -0.01em; }
-    p { font-size: 1.05rem; line-height: 1.8; color: var(--grey-4); margin-bottom: calc(var(--unit) * 2); }
-    p:last-child { margin-bottom: 0; }
-    a { color: var(--black); text-decoration-color: var(--grey-2); text-underline-offset: 3px; transition: color 0.15s; }
-    a:hover { color: var(--red); text-decoration-color: var(--red); }
-    strong { font-weight: 500; color: var(--black); }
-    .pull-quote { border-left: 3px solid var(--red); margin: calc(var(--unit) * 4) 0; padding: calc(var(--unit) * 1) 0 calc(var(--unit) * 1) calc(var(--unit) * 3); font-size: 1.05rem; font-weight: 400; font-style: italic; color: var(--black); line-height: 1.5; }
-    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--unit) * 5) calc(var(--unit) * 6); }
-    @media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
-    .service-item p { font-size: 1rem; }
-    .service-link { display: inline-block; margin-top: calc(var(--unit) * 1); font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--red); border-bottom: 1px solid var(--red); padding-bottom: 1px; }
-    .service-link:hover { color: var(--black); border-color: var(--black); }
-    .books-list { list-style: none; margin-top: calc(var(--unit) * 2); }
-    .books-list li { display: grid; grid-template-columns: 3rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 3) 0; border-top: 1px solid var(--grey-2); align-items: baseline; }
-    .book-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 300; color: var(--grey-3); letter-spacing: 0.06em; padding-top: 2px; }
-    .book-title { font-size: 0.95rem; font-weight: 500; font-style: italic; margin-bottom: 0.3rem; color: var(--black); }
-    .book-desc { font-size: 0.83rem; color: var(--grey-3); line-height: 1.5; }
-    .inprogress-list { list-style: none; margin-top: calc(var(--unit) * 2); }
-    .inprogress-list li { display: grid; grid-template-columns: 3rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 3) 0; border-top: 1px solid var(--grey-2); align-items: baseline; }
-    .inprogress-dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; margin-top: 6px; justify-self: center; }
-    .inprogress-list p { font-size: 1rem; }
-    .traj-list { list-style: none; margin-top: calc(var(--unit) * 2); }
-    .traj-list li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 2) 0; border-top: 1px solid var(--grey-2); font-size: 1rem; color: var(--grey-4); align-items: baseline; }
-    .traj-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 300; color: var(--grey-3); letter-spacing: 0.06em; }
-    .press-list { list-style: none; margin-top: calc(var(--unit) * 2); }
-    .press-list li { display: grid; grid-template-columns: 10rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 2) 0; border-top: 1px solid var(--grey-2); font-size: 1rem; align-items: baseline; }
-    @media (max-width: 480px) { .press-list li, .traj-list li { grid-template-columns: 1fr; gap: 0.25rem 0; } }
-    .press-source { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-3); }
-    .links-bar { padding: calc(var(--unit) * 4) 0; border-top: 3px solid var(--black); display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
-    .links-bar a { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 300; letter-spacing: 0.08em; text-decoration: none; color: var(--grey-3); transition: color 0.15s; }
-    .links-bar a:hover { color: var(--black); }
-    .links-bar-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.08em; color: var(--grey-4); }
-    .contact-block { background: var(--black); color: var(--white); padding: calc(var(--unit) * 7) var(--pad); }
-    .contact-block .section-label { color: var(--white); font-size: 1rem; }
-    .contact-block h2 { color: var(--white); }
-    .contact-block p { color: var(--grey-3); font-size: 1rem; }
-    .contact-block a { color: var(--white); text-decoration-color: var(--grey-4); }
-    .contact-block a:hover { color: var(--red); }
-    .contact-email { display: block; font-size: 1.5rem; font-weight: 300; font-style: italic; margin: calc(var(--unit) * 2) 0; color: var(--white); text-decoration: none; letter-spacing: -0.01em; }
-    .contact-email:hover { color: var(--red); }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .hero, .wrap > section, .contact-block, .wrap > .links-bar { animation: fadeUp 0.5s ease both; }
-    .hero { animation-delay: 0.00s; } .wrap > section:nth-child(1) { animation-delay: 0.06s; } .wrap > section:nth-child(2) { animation-delay: 0.10s; } .wrap > section:nth-child(3) { animation-delay: 0.14s; } .wrap > section:nth-child(4) { animation-delay: 0.18s; } .wrap > section:nth-child(5) { animation-delay: 0.22s; } .wrap > section:nth-child(6) { animation-delay: 0.26s; } .wrap > .links-bar { animation-delay: 0.30s; } .contact-block { animation-delay: 0.34s; }
-  </style>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <nav class="lang-nav">
-  <a href="../ca/">CA</a>
-  <a href="../en/">EN</a>
-  <a href="../es/" class="active">ES</a>
+  <a href="/">CA</a>
+  <a href="/en/">EN</a>
+  <a href="/es/" class="active">ES</a>
 </nav>
 
 <div class="hero">
@@ -244,12 +167,12 @@
     <span class="section-label">Contacto</span>
     <h2>¿Trabajamos juntos?</h2>
     <p>Encargos de cobertura fotográfica, colaboraciones editoriales, proyectos de fotobook, talleres o cualquier otro proyecto.</p>
-    <a class="contact-email" href="#" onclick="this.href='mai'+'lto:'+'hola'+'@'+'pocallum.cat';return false;">hola @ pocallum.cat</a>
+    <a class="contact-email" href="#" data-mailto="1">hola @ pocallum.cat</a>
     <p class="pinhole-note">* La foto de perfil es un autorretrato estenopeico.</p>
   </div>
 </div>
 
-<script data-goatcounter="https://about-pocallum.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<script data-goatcounter="https://about-pocallum.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<script src="../js/main.js" defer></script>
 </body>
 </html>
