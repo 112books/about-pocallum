@@ -90,16 +90,17 @@ strong { font-weight: 500; color: var(--black); }
 .stats-link {
   display: inline-block;
   margin-top: calc(var(--unit) * 4);
-  font-size: 0.6rem;
-  color: transparent;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: var(--grey-4);
   text-decoration: none;
-  user-select: none;
-  opacity: 0.01;
+  opacity: 0.08;
   transition: opacity 0.3s;
 }
 .stats-link:hover {
-  opacity: 0.3;
-  color: var(--grey-4);
+  opacity: 0.6;
+  color: var(--grey-3);
 }
 /* ─────────────────────────────────────────────────────────────
    COMUNICACIÓ CULTURAL — secció + botó
