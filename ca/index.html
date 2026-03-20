@@ -16,433 +16,83 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --black: #0a0a0a;
-      --white: #ffffff;
-      --grey-1: #f5f5f5;
-      --grey-2: #e0e0e0;
-      --grey-3: #999999;
-      --grey-4: #555555;
-      --red: #cc0000;
-      --col: 720px;
-      --pad: 2rem;
-      --unit: 8px;
+      --black: #0a0a0a; --white: #ffffff; --grey-1: #f5f5f5; --grey-2: #e0e0e0;
+      --grey-3: #999999; --grey-4: #555555; --red: #cc0000;
+      --col: 720px; --pad: 2rem; --unit: 8px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 18px; scroll-behavior: smooth; }
-
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
-      font-weight: 300;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* LANG NAV */
-    .lang-nav {
-      border-bottom: 1px solid var(--grey-2);
-      padding: calc(var(--unit) * 2) var(--pad);
-      display: flex;
-      justify-content: flex-end;
-      gap: 1.5rem;
-    }
-    .lang-nav a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-decoration: none;
-      color: var(--grey-3);
-      transition: color 0.15s;
-    }
+    body { background: var(--white); color: var(--black); font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-weight: 300; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .lang-nav { border-bottom: 1px solid var(--grey-2); padding: calc(var(--unit) * 2) var(--pad); display: flex; justify-content: flex-end; gap: 1.5rem; }
+    .lang-nav a { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.12em; text-decoration: none; color: var(--grey-3); transition: color 0.15s; }
     .lang-nav a:hover { color: var(--black); }
-    .lang-nav a.active {
-      color: var(--black);
-      border-bottom: 1px solid var(--black);
-      padding-bottom: 1px;
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      min-height: 560px;
-      border-bottom: 3px solid var(--black);
-    }
-    @media (max-width: 600px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-      .hero-img { min-height: 260px; order: -1; }
-    }
-
-    .hero-text {
-      padding: calc(var(--unit) * 8) var(--pad) calc(var(--unit) * 6);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .site-tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      color: var(--grey-3);
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: calc(var(--unit) * 2);
-    }
-
-    h1 {
-      font-family: 'IBM Plex Sans', Helvetica, sans-serif;
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 500;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-    h1 .nick {
-      font-weight: 300;
-      color: var(--grey-3);
-      font-style: italic;
-    }
-
-    .subtitle {
-      margin-top: calc(var(--unit) * 2.5);
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--grey-4);
-      line-height: 2;
-    }
-    .subtitle span {
-      display: block;
-    }
-
-    .hero-cta {
-      margin-top: calc(var(--unit) * 4);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .btn {
-      display: inline-block;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.65rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--black);
-      color: var(--white);
-      background: var(--black);
-      white-space: nowrap;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
-    }
+    .lang-nav a.active { color: var(--black); border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .hero { display: grid; grid-template-columns: 1fr 3fr; min-height: 560px; border-bottom: 3px solid var(--black); }
+    @media (max-width: 600px) { .hero { grid-template-columns: 1fr; min-height: auto; } .hero-img { min-height: 260px; order: -1; } }
+    .hero-text { padding: calc(var(--unit) * 8) var(--pad) calc(var(--unit) * 6); display: flex; flex-direction: column; justify-content: space-between; }
+    .site-tag { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; font-weight: 400; letter-spacing: 0.16em; color: var(--grey-3); text-transform: uppercase; display: block; margin-bottom: calc(var(--unit) * 2); }
+    h1 { font-family: 'IBM Plex Sans', Helvetica, sans-serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; }
+    h1 .nick { font-weight: 300; color: var(--grey-3); font-style: italic; }
+    .subtitle { margin-top: calc(var(--unit) * 2.5); font-size: 1rem; font-weight: 300; color: var(--grey-4); line-height: 2; }
+    .subtitle span { display: block; }
+    .hero-cta { margin-top: calc(var(--unit) * 4); display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .btn { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.5rem 1rem; border: 1px solid var(--black); color: var(--white); background: var(--black); white-space: nowrap; transition: background 0.15s, color 0.15s, border-color 0.15s; }
     .btn:hover { background: var(--red); border-color: var(--red); color: var(--white); }
-    .btn.outline {
-      background: transparent;
-      color: var(--black);
-    }
+    .btn.outline { background: transparent; color: var(--black); }
     .btn.outline:hover { background: var(--black); color: var(--white); }
-
-    /* FOTO */
-    .hero-img {
-      position: relative;
-      background: var(--grey-1);
-      overflow: hidden;
-    }
-    .hero-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      filter: grayscale(15%);
-    }
-    .hero-img .photo-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      color: var(--grey-3);
-    }
-    .hero-img .photo-placeholder .ph-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-align: center;
-      line-height: 1.8;
-    }
-    .hero-img .photo-placeholder svg {
-      opacity: 0.3;
-    }
-
-    /* WRAP */
-    .wrap {
-      max-width: var(--col);
-      margin: 0 auto;
-      padding: 0 var(--pad);
-    }
-
-    /* SECTIONS */
-    section {
-      padding: calc(var(--unit) * 6) 0;
-      border-bottom: 1px solid var(--grey-2);
-    }
+    .hero-img { position: relative; background: var(--grey-1); overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: grayscale(15%); }
+    .wrap { max-width: var(--col); margin: 0 auto; padding: 0 var(--pad); }
+    section { padding: calc(var(--unit) * 6) 0; border-bottom: 1px solid var(--grey-2); }
     section:last-of-type { border-bottom: none; }
-
-    .section-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: calc(var(--unit) * 3);
-      display: block;
-    }
-
-    h2 {
-      font-family: 'IBM Plex Sans', Helvetica, sans-serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: calc(var(--unit) * 2);
-    }
-    h3 {
-      font-family: 'IBM Plex Sans', Helvetica, sans-serif;
-      font-size: 1.05rem;
-      font-weight: 500;
-      margin-bottom: calc(var(--unit) * 1);
-      letter-spacing: -0.01em;
-    }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--grey-4);
-      margin-bottom: calc(var(--unit) * 2);
-    }
+    .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: calc(var(--unit) * 3); display: block; }
+    h2 { font-family: 'IBM Plex Sans', Helvetica, sans-serif; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: calc(var(--unit) * 2); }
+    h3 { font-family: 'IBM Plex Sans', Helvetica, sans-serif; font-size: 1.05rem; font-weight: 500; margin-bottom: calc(var(--unit) * 1); letter-spacing: -0.01em; }
+    p { font-size: 1.05rem; line-height: 1.8; color: var(--grey-4); margin-bottom: calc(var(--unit) * 2); }
     p:last-child { margin-bottom: 0; }
-
     a { color: var(--black); text-decoration-color: var(--grey-2); text-underline-offset: 3px; transition: color 0.15s; }
     a:hover { color: var(--red); text-decoration-color: var(--red); }
     strong { font-weight: 500; color: var(--black); }
-
-    .pull-quote {
-      border-left: 3px solid var(--red);
-      margin: calc(var(--unit) * 4) 0;
-      padding: calc(var(--unit) * 1) 0 calc(var(--unit) * 1) calc(var(--unit) * 3);
-      font-size: 1.05rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--black);
-      line-height: 1.5;
-    }
-
-    /* SERVICES GRID */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: calc(var(--unit) * 5) calc(var(--unit) * 6);
-    }
+    .pull-quote { border-left: 3px solid var(--red); margin: calc(var(--unit) * 4) 0; padding: calc(var(--unit) * 1) 0 calc(var(--unit) * 1) calc(var(--unit) * 3); font-size: 1.05rem; font-weight: 400; font-style: italic; color: var(--black); line-height: 1.5; }
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--unit) * 5) calc(var(--unit) * 6); }
     @media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
     .service-item p { font-size: 1rem; }
-    .service-link {
-      display: inline-block;
-      margin-top: calc(var(--unit) * 1);
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.62rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--red);
-      border-bottom: 1px solid var(--red);
-      padding-bottom: 1px;
-    }
+    .service-link { display: inline-block; margin-top: calc(var(--unit) * 1); font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--red); border-bottom: 1px solid var(--red); padding-bottom: 1px; }
     .service-link:hover { color: var(--black); border-color: var(--black); }
-
-    /* BOOKS */
     .books-list { list-style: none; margin-top: calc(var(--unit) * 2); }
-    .books-list li {
-      display: grid;
-      grid-template-columns: 3rem 1fr;
-      gap: 0 calc(var(--unit) * 3);
-      padding: calc(var(--unit) * 3) 0;
-      border-top: 1px solid var(--grey-2);
-      align-items: baseline;
-    }
-    .book-year {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.65rem;
-      font-weight: 300;
-      color: var(--grey-3);
-      letter-spacing: 0.06em;
-      padding-top: 2px;
-    }
-    .book-title {
-      font-size: 0.95rem;
-      font-weight: 500;
-      font-style: italic;
-      margin-bottom: 0.3rem;
-      color: var(--black);
-    }
+    .books-list li { display: grid; grid-template-columns: 3rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 3) 0; border-top: 1px solid var(--grey-2); align-items: baseline; }
+    .book-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 300; color: var(--grey-3); letter-spacing: 0.06em; padding-top: 2px; }
+    .book-title { font-size: 0.95rem; font-weight: 500; font-style: italic; margin-bottom: 0.3rem; color: var(--black); }
     .book-desc { font-size: 0.83rem; color: var(--grey-3); line-height: 1.5; }
-
-    /* IN PROGRESS */
     .inprogress-list { list-style: none; margin-top: calc(var(--unit) * 2); }
-    .inprogress-list li {
-      display: grid;
-      grid-template-columns: 3rem 1fr;
-      gap: 0 calc(var(--unit) * 3);
-      padding: calc(var(--unit) * 3) 0;
-      border-top: 1px solid var(--grey-2);
-      align-items: baseline;
-    }
-    .inprogress-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--red);
-      border-radius: 50%;
-      margin-top: 6px;
-      justify-self: center;
-    }
+    .inprogress-list li { display: grid; grid-template-columns: 3rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 3) 0; border-top: 1px solid var(--grey-2); align-items: baseline; }
+    .inprogress-dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; margin-top: 6px; justify-self: center; }
     .inprogress-list p { font-size: 1rem; }
-
-    /* TIMELINE */
     .traj-list { list-style: none; margin-top: calc(var(--unit) * 2); }
-    .traj-list li {
-      display: grid;
-      grid-template-columns: 7.5rem 1fr;
-      gap: 0 calc(var(--unit) * 3);
-      padding: calc(var(--unit) * 2) 0;
-      border-top: 1px solid var(--grey-2);
-      font-size: 1rem;
-      color: var(--grey-4);
-      align-items: baseline;
-    }
-    .traj-year {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.65rem;
-      font-weight: 300;
-      color: var(--grey-3);
-      letter-spacing: 0.06em;
-    }
-
-    /* PRESS */
+    .traj-list li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 2) 0; border-top: 1px solid var(--grey-2); font-size: 1rem; color: var(--grey-4); align-items: baseline; }
+    .traj-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 300; color: var(--grey-3); letter-spacing: 0.06em; }
     .press-list { list-style: none; margin-top: calc(var(--unit) * 2); }
-    .press-list li {
-      display: grid;
-      grid-template-columns: 10rem 1fr;
-      gap: 0 calc(var(--unit) * 3);
-      padding: calc(var(--unit) * 2) 0;
-      border-top: 1px solid var(--grey-2);
-      font-size: 1rem;
-      align-items: baseline;
-    }
-    @media (max-width: 480px) {
-      .press-list li, .traj-list li { grid-template-columns: 1fr; gap: 0.25rem 0; }
-    }
-    .press-source {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.62rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--grey-3);
-    }
-
-    /* LINKS BAR */
-    .links-bar {
-      padding: calc(var(--unit) * 4) 0;
-      border-top: 3px solid var(--black);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 2rem;
-    }
-    .links-bar a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      color: var(--grey-3);
-      transition: color 0.15s;
-    }
+    .press-list li { display: grid; grid-template-columns: 10rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 2) 0; border-top: 1px solid var(--grey-2); font-size: 1rem; align-items: baseline; }
+    @media (max-width: 480px) { .press-list li, .traj-list li { grid-template-columns: 1fr; gap: 0.25rem 0; } }
+    .press-source { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-3); }
+    .links-bar { padding: calc(var(--unit) * 4) 0; border-top: 3px solid var(--black); display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
+    .links-bar a { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 300; letter-spacing: 0.08em; text-decoration: none; color: var(--grey-3); transition: color 0.15s; }
     .links-bar a:hover { color: var(--black); }
-    .links-bar-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--grey-4);
-    }
-
-    /* CONTACT */
-    .contact-block {
-      background: var(--black);
-      color: var(--white);
-      padding: calc(var(--unit) * 7) var(--pad);
-    }
+    .links-bar-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.08em; color: var(--grey-4); }
+    .contact-block { background: var(--black); color: var(--white); padding: calc(var(--unit) * 7) var(--pad); }
     .contact-block .section-label { color: var(--white); font-size: 1rem; }
     .contact-block h2 { color: var(--white); }
     .contact-block p { color: var(--grey-3); font-size: 1rem; }
     .contact-block a { color: var(--white); text-decoration-color: var(--grey-4); }
     .contact-block a:hover { color: var(--red); }
-    .contact-email {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: 300;
-      font-style: italic;
-      margin: calc(var(--unit) * 2) 0;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
+    .contact-email { display: block; font-size: 1.5rem; font-weight: 300; font-style: italic; margin: calc(var(--unit) * 2) 0; color: var(--white); text-decoration: none; letter-spacing: -0.01em; }
     .contact-email:hover { color: var(--red); }
-    .pinhole-note {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      color: var(--grey-4);
-      margin-top: calc(var(--unit) * 5);
-      text-transform: uppercase;
-    }
-
-    /* FADE IN */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero, .wrap > section, .contact-block, .wrap > .links-bar {
-      animation: fadeUp 0.5s ease both;
-    }
-    .hero                         { animation-delay: 0.00s; }
-    .wrap > section:nth-child(1)  { animation-delay: 0.06s; }
-    .wrap > section:nth-child(2)  { animation-delay: 0.10s; }
-    .wrap > section:nth-child(3)  { animation-delay: 0.14s; }
-    .wrap > section:nth-child(4)  { animation-delay: 0.18s; }
-    .wrap > section:nth-child(5)  { animation-delay: 0.22s; }
-    .wrap > section:nth-child(6)  { animation-delay: 0.26s; }
-    .wrap > .links-bar            { animation-delay: 0.30s; }
-    .contact-block                { animation-delay: 0.34s; }
+    .pinhole-note { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; color: var(--grey-4); margin-top: calc(var(--unit) * 5); text-transform: uppercase; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .hero, .wrap > section, .contact-block, .wrap > .links-bar { animation: fadeUp 0.5s ease both; }
+    .hero { animation-delay: 0.00s; } .wrap > section:nth-child(1) { animation-delay: 0.06s; } .wrap > section:nth-child(2) { animation-delay: 0.10s; } .wrap > section:nth-child(3) { animation-delay: 0.14s; } .wrap > section:nth-child(4) { animation-delay: 0.18s; } .wrap > section:nth-child(5) { animation-delay: 0.22s; } .wrap > section:nth-child(6) { animation-delay: 0.26s; } .wrap > .links-bar { animation-delay: 0.30s; } .contact-block { animation-delay: 0.34s; }
   </style>
 </head>
-
-<script data-goatcounter="https://about-pocallum.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-        
 <body>
 
 <nav class="lang-nav">
@@ -451,7 +101,6 @@
   <a href="../es/">ES</a>
 </nav>
 
-<!-- HERO: text esquerra, foto dreta -->
 <div class="hero">
   <div class="hero-text">
     <div>
@@ -469,7 +118,6 @@
       <a href="https://pocallum.cat" target="_blank" class="btn outline">Portfolio</a>
     </div>
   </div>
-
   <div class="hero-img">
     <img src="../img/2020-04-10-003.jpg" alt="Joan Linux Martínez">
   </div>
@@ -478,7 +126,6 @@
 <main>
 <div class="wrap">
 
-  <!-- BIO -->
   <section>
     <span class="section-label">Qui soc</span>
     <p>Vaig néixer a Barcelona el 1972 i vaig créixer a Subirats (Alt Penedès), en un ambient familiar marcat per la ceràmica, la pintura i l'escultura dels meus pares. Als 15 anys vaig tornar a Barcelona per estudiar Arts Gràfiques, combinant-ho amb fanzines, revistes i una passió per la fotografia que des d'aleshores no he parat de sostenir.</p>
@@ -488,39 +135,32 @@
     <p>Mantenir viva la fotografia analògica en l'era digital no és nostàlgia: és una posició deliberada davant la velocitat, l'excés i la desaparició de l'ofici fotogràfic.</p>
   </section>
 
-  <!-- SERVEIS -->
   <section>
     <span class="section-label">El que faig</span>
     <div class="services-grid">
-
       <div class="service-item">
         <h3>Fotografia d'encàrrec</h3>
         <p>Cobertura professional de festivals, concerts, arts escèniques i esdeveniments culturals. Fotògraf vinculat al <a href="https://www.festivalbluesbarcelona.com" target="_blank" rel="noopener"><strong>Barcelona Blues Festival</strong></a> des del 2002. Fotògraf oficial de la <a href="https://baumfest.com" target="_blank" rel="noopener"><strong>Barcelona Tattoo Expo</strong></a> (2002–2015). Portades d'àlbums per Barcelona Big Blues Band, Big Dani Pérez, Bernat Font Trio i Joan Pau Cumellas, entre d'altres.</p>
         <a href="#contacte" class="service-link">Pressupost sense compromís</a>
       </div>
-
       <div class="service-item">
         <h3>Edició gràfica i fotobooks</h3>
         <p>Fundador de <a href="https://112books.eu" target="_blank" rel="noopener">112 Books</a>, editorial independent de fotobooks. Acompanyo nous autors en totes les etapes: de la conceptualització fins a la impressió. Editar és un acte de responsabilitat — no tota imatge mereix ser impresa.</p>
         <a href="https://112books.eu" target="_blank" rel="noopener" class="service-link">112books.eu</a>
       </div>
-
       <div class="service-item">
         <h3>Formació fotogràfica</h3>
         <p>Professor de fotografia analògica, experimental i processos alternatius a <a href="https://llumatics.com" target="_blank" rel="noopener">Llumàtics</a> des del 2017 i a <a href="https://www.instagram.com/camerasandfilms.barcelona/" target="_blank" rel="noopener">Cameras &amp; Films</a> (antiga Lomography Embassy Barcelona) des del 2011. Organitzo sessions del <strong>Dia Mundial de la Fotografia Estenopeica</strong> a la <a href="https://naubostik.com" target="_blank" rel="noopener">Nau Bostik</a>.</p>
         <a href="https://llumatics.com" target="_blank" rel="noopener" class="service-link">Llumatics.com</a>
       </div>
-
       <div class="service-item">
         <h3>Consultoria tecnològica</h3>
         <p>A través de <a href="https://linuxbcn.com" target="_blank" rel="noopener">LinuxBCN</a> oferim consultoria tecnològica amb més de 30 anys d'experiència: programari lliure, desenvolupament web, disseny, servidors i infraestructura digital segura. Treballem també amb les darreres eines d'intel·ligència artificial aplicada.</p>
         <a href="https://linuxbcn.com" target="_blank" rel="noopener" class="service-link">linuxbcn.com</a>
       </div>
-
     </div>
   </section>
 
-  <!-- PROJECTES EN CURS -->
   <section>
     <span class="section-label">Projectes en curs</span>
     <ul class="inprogress-list">
@@ -543,156 +183,50 @@
     </ul>
   </section>
 
-  <!-- OBRES PUBLICADES -->
   <section>
     <span class="section-label">Obres publicades</span>
     <h2>Llibres</h2>
     <ul class="books-list">
-      <li>
-        <span class="book-year">2026</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/la-sacsejada-interior-antropoformologies-iii/" target="_blank" rel="noopener">La sacsejada interior: Antropoformologies III</a></div>
-          <p class="book-desc">Tercer volum de la sèrie. Un recorregut visual i textual que explora la fragilitat, la tensió i els límits de la mirada a través de la fotografia i l'escriptura fragmentada.</p>
-        </div>
-      </li>
-      <li>
-        <span class="book-year">2026</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/una-bestia-i-una-sola-llum-antropoformologies-ii/" target="_blank" rel="noopener">Una bèstia i una sola llum: Antropoformologies II</a></div>
-          <p class="book-desc">Segon volum de la sèrie on fotografia i dansa dialoguen sense guió previ. Encontre directe entre fotògraf i ballarina: improvisació, gest, presència.</p>
-        </div>
-      </li>
-      <li>
-        <span class="book-year">2026</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/el-naixement-duna-bestia-antropoformologies-i/" target="_blank" rel="noopener">El naixement d'una bèstia: Antropoformologies I</a></div>
-          <p class="book-desc">Primer volum de la sèrie. Exploració de la transformació del cos a través de la dansa, la llum i el ritme visual.</p>
-        </div>
-      </li>
-      <li>
-        <span class="book-year">2025</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/anonimos-mas-alla-de-las-apariencias/" target="_blank" rel="noopener">Anónimos, más allá de las apariencias</a></div>
-          <p class="book-desc">Col·laboració amb Mario Ortiz. Retrats analògics i textos breus que exploren la identitat i la fragilitat humana.</p>
-        </div>
-      </li>
-      <li>
-        <span class="book-year">2024</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/i-wanna-be-your-dog/" target="_blank" rel="noopener">I Wanna Be Your Dog</a></div>
-          <p class="book-desc">83 fotografies sobre la relació entre humans i gossos a Barcelona. Inspirat en The Stooges.</p>
-        </div>
-      </li>
-      <li>
-        <span class="book-year">2024</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/acarrejant-de-joan-linux/" target="_blank" rel="noopener">aCarrejant</a></div>
-          <p class="book-desc">Fotollibre de fotografia urbana de Barcelona. 84 pàgines, 24×15 cm.</p>
-        </div>
-      </li>
-      <li>
-        <span class="book-year">2022</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/preses-falses-40-anys-de-blues-a-barcelona/" target="_blank" rel="noopener">Preses Falses – 40 anys de Blues a Barcelona</a></div>
-          <p class="book-desc">Retrats dels protagonistes de l'escena blues barcelonina. Tots en analògic amb Hasselblad 500, revelats artesanalment per mi.</p>
-        </div>
-      </li>
-      <li>
-        <span class="book-year">2020</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/incoherencias-una-pequena-historia-del-absurdo/" target="_blank" rel="noopener">Incoherencias. Una pequeña historia del absurdo</a></div>
-          <p class="book-desc">Fotollibre col·laboratiu amb Alfonso de Castro. Paisatge interior i realitat absurda.</p>
-        </div>
-      </li>
-      <li>
-        <span class="book-year">2020</span>
-        <div>
-          <div class="book-title"><a href="https://www.112books.eu/producte/pedrola/" target="_blank" rel="noopener">Pedrola (Wet Shadows)</a></div>
-          <p class="book-desc">Fotografies analògiques ortocromàtiques d'una jornada al riu Ebre.</p>
-        </div>
-      </li>
+      <li><span class="book-year">2026</span><div><div class="book-title"><a href="https://www.112books.eu/producte/la-sacsejada-interior-antropoformologies-iii/" target="_blank" rel="noopener">La sacsejada interior: Antropoformologies III</a></div><p class="book-desc">Tercer volum de la sèrie. Un recorregut visual i textual que explora la fragilitat, la tensió i els límits de la mirada a través de la fotografia i l'escriptura fragmentada.</p></div></li>
+      <li><span class="book-year">2026</span><div><div class="book-title"><a href="https://www.112books.eu/producte/una-bestia-i-una-sola-llum-antropoformologies-ii/" target="_blank" rel="noopener">Una bèstia i una sola llum: Antropoformologies II</a></div><p class="book-desc">Segon volum de la sèrie on fotografia i dansa dialoguen sense guió previ. Encontre directe entre fotògraf i ballarina: improvisació, gest, presència.</p></div></li>
+      <li><span class="book-year">2026</span><div><div class="book-title"><a href="https://www.112books.eu/producte/el-naixement-duna-bestia-antropoformologies-i/" target="_blank" rel="noopener">El naixement d'una bèstia: Antropoformologies I</a></div><p class="book-desc">Primer volum de la sèrie. Exploració de la transformació del cos a través de la dansa, la llum i el ritme visual.</p></div></li>
+      <li><span class="book-year">2025</span><div><div class="book-title"><a href="https://www.112books.eu/producte/anonimos-mas-alla-de-las-apariencias/" target="_blank" rel="noopener">Anónimos, más allá de las apariencias</a></div><p class="book-desc">Col·laboració amb Mario Ortiz. Retrats analògics i textos breus que exploren la identitat i la fragilitat humana.</p></div></li>
+      <li><span class="book-year">2024</span><div><div class="book-title"><a href="https://www.112books.eu/producte/i-wanna-be-your-dog/" target="_blank" rel="noopener">I Wanna Be Your Dog</a></div><p class="book-desc">83 fotografies sobre la relació entre humans i gossos a Barcelona. Inspirat en The Stooges.</p></div></li>
+      <li><span class="book-year">2024</span><div><div class="book-title"><a href="https://www.112books.eu/producte/acarrejant-de-joan-linux/" target="_blank" rel="noopener">aCarrejant</a></div><p class="book-desc">Fotollibre de fotografia urbana de Barcelona. 84 pàgines, 24×15 cm.</p></div></li>
+      <li><span class="book-year">2022</span><div><div class="book-title"><a href="https://www.112books.eu/producte/preses-falses-40-anys-de-blues-a-barcelona/" target="_blank" rel="noopener">Preses Falses – 40 anys de Blues a Barcelona</a></div><p class="book-desc">Retrats dels protagonistes de l'escena blues barcelonina. Tots en analògic amb Hasselblad 500, revelats artesanalment per mi.</p></div></li>
+      <li><span class="book-year">2020</span><div><div class="book-title"><a href="https://www.112books.eu/producte/incoherencias-una-pequena-historia-del-absurdo/" target="_blank" rel="noopener">Incoherencias. Una pequeña historia del absurdo</a></div><p class="book-desc">Fotollibre col·laboratiu amb Alfonso de Castro. Paisatge interior i realitat absurda.</p></div></li>
+      <li><span class="book-year">2020</span><div><div class="book-title"><a href="https://www.112books.eu/producte/pedrola/" target="_blank" rel="noopener">Pedrola (Wet Shadows)</a></div><p class="book-desc">Fotografies analògiques ortocromàtiques d'una jornada al riu Ebre.</p></div></li>
     </ul>
   </section>
 
-  <!-- TRAJECTORIA -->
   <section>
     <span class="section-label">Trajectòria</span>
     <ul class="traj-list">
-      <li>
-        <span class="traj-year">2010–avui</span>
-        <span>Fotògraf professional · <a href="https://pocallum.cat" target="_blank" rel="noopener"><strong>pocallum.cat</strong></a></span>
-      </li>
-      <li>
-        <span class="traj-year">2017–avui</span>
-        <span>Professor de fotografia analògica i processos alternatius a <a href="https://llumatics.com" target="_blank" rel="noopener"><strong>Llumàtics</strong></a></span>
-      </li>
-      <li>
-        <span class="traj-year">2011–avui</span>
-        <span>Professor a <a href="https://www.instagram.com/camerasandfilms.barcelona/" target="_blank" rel="noopener"><strong>Cameras &amp; Films</strong></a> (antiga Lomography Embassy Barcelona)</span>
-      </li>
-      <li>
-        <span class="traj-year">2001–avui</span>
-        <span>Consultoria tecnològica · <a href="https://linuxbcn.com" target="_blank" rel="noopener"><strong>LinuxBCN</strong></a></span>
-      </li>
-      <li>
-        <span class="traj-year">2020–avui</span>
-        <span>Fundador i editor gràfic de l'editorial <a href="https://112books.eu" target="_blank" rel="noopener"><strong>112 Books</strong></a></span>
-      </li>
-      <li>
-        <span class="traj-year">Set. 2020–avui</span>
-        <span>Resident i participant en l'autogestió de la <a href="https://naubostik.com" target="_blank" rel="noopener"><strong>Nau Bostik</strong></a></span>
-      </li>
-      <li>
-        <span class="traj-year">2002–avui</span>
-        <span>Coordinador (amb altres membres) de <a href="https://9barrisimatge.org" target="_blank" rel="noopener"><strong>9 Barris Imatge</strong></a></span>
-      </li>
-      <li>
-        <span class="traj-year">2002–avui</span>
-        <span>Col·laborador fotogràfic a <a href="https://www.instagram.com/prollema/" target="_blank" rel="noopener"><strong>Prollema</strong></a></span>
-      </li>
-      <li>
-        <span class="traj-year">2002–avui</span>
-        <span>Fotògraf vinculat al <a href="https://www.festivalbluesbarcelona.com" target="_blank" rel="noopener"><strong>Festival de Blues de Barcelona</strong></a></span>
-      </li>
-      <li>
-        <span class="traj-year">2002–avui</span>
-        <span>Col·laborador fotogràfic a la <a href="https://baumfest.com" target="_blank" rel="noopener"><strong>Barcelona Tattoo Expo</strong></a> (fotògraf oficial 2002–2015)</span>
-      </li>
-      <li>
-        <span class="traj-year">2002–2024</span>
-        <span>Col·laborador fotogràfic de <a href="https://9bacull.org" target="_blank" rel="noopener"><strong>9 Barris Acull</strong></a> (recentment desapareguda)</span>
-      </li>
-      <li>
-        <span class="traj-year">2002–2017</span>
-        <span>Membre de la gestora i comissió de programació cultural del <a href="https://www.casalprospe.org" target="_blank" rel="noopener"><strong>Casal de barri de Prosperitat</strong></a></span>
-      </li>
+      <li><span class="traj-year">2010–avui</span><span>Fotògraf professional · <a href="https://pocallum.cat" target="_blank" rel="noopener"><strong>pocallum.cat</strong></a></span></li>
+      <li><span class="traj-year">2017–avui</span><span>Professor de fotografia analògica i processos alternatius a <a href="https://llumatics.com" target="_blank" rel="noopener"><strong>Llumàtics</strong></a></span></li>
+      <li><span class="traj-year">2011–avui</span><span>Professor a <a href="https://www.instagram.com/camerasandfilms.barcelona/" target="_blank" rel="noopener"><strong>Cameras &amp; Films</strong></a> (antiga Lomography Embassy Barcelona)</span></li>
+      <li><span class="traj-year">2001–avui</span><span>Consultoria tecnològica · <a href="https://linuxbcn.com" target="_blank" rel="noopener"><strong>LinuxBCN</strong></a></span></li>
+      <li><span class="traj-year">2020–avui</span><span>Fundador i editor gràfic de l'editorial <a href="https://112books.eu" target="_blank" rel="noopener"><strong>112 Books</strong></a></span></li>
+      <li><span class="traj-year">Set. 2020–avui</span><span>Resident i participant en l'autogestió de la <a href="https://naubostik.com" target="_blank" rel="noopener"><strong>Nau Bostik</strong></a></span></li>
+      <li><span class="traj-year">2002–avui</span><span>Coordinador (amb altres membres) de <a href="https://9barrisimatge.org" target="_blank" rel="noopener"><strong>9 Barris Imatge</strong></a></span></li>
+      <li><span class="traj-year">2002–avui</span><span>Col·laborador fotogràfic a <a href="https://www.instagram.com/prollema/" target="_blank" rel="noopener"><strong>Prollema</strong></a></span></li>
+      <li><span class="traj-year">2002–avui</span><span>Fotògraf vinculat al <a href="https://www.festivalbluesbarcelona.com" target="_blank" rel="noopener"><strong>Festival de Blues de Barcelona</strong></a></span></li>
+      <li><span class="traj-year">2002–avui</span><span>Col·laborador fotogràfic a la <a href="https://baumfest.com" target="_blank" rel="noopener"><strong>Barcelona Tattoo Expo</strong></a> (fotògraf oficial 2002–2015)</span></li>
+      <li><span class="traj-year">2002–2024</span><span>Col·laborador fotogràfic de <a href="https://9bacull.org" target="_blank" rel="noopener"><strong>9 Barris Acull</strong></a> (recentment desapareguda)</span></li>
+      <li><span class="traj-year">2002–2017</span><span>Membre de la gestora i comissió de programació cultural del <a href="https://www.casalprospe.org" target="_blank" rel="noopener"><strong>Casal de barri de Prosperitat</strong></a></span></li>
     </ul>
   </section>
 
-  <!-- PREMSA -->
   <section>
     <span class="section-label">Premsa</span>
     <ul class="press-list">
-      <li>
-        <span class="press-source">CulturaB</span>
-        <a href="https://culturab.cat/noticies/barri-prosperitat-tenim-escenes-blues-mes-importants-europa/" target="_blank" rel="noopener">Retrats de 40 anys de Blues a Barcelona</a>
-      </li>
-      <li>
-        <span class="press-source">CulturaB</span>
-        <a href="https://culturab.cat/noticies/tres-llibres-retraten-barcelona-no-timagines/" target="_blank" rel="noopener">Tres llibres que retraten una Barcelona que no t'imagines</a>
-      </li>
-      <li>
-        <span class="press-source">CulturaB</span>
-        <a href="https://culturab.cat/noticies/llibre-retrats-neixer-nevera-plena-desconeguts/" target="_blank" rel="noopener">El llibre de retrats que va néixer d'una nevera plena de desconeguts</a>
-      </li>
-      <li>
-        <span class="press-source">The New Barcelona Post</span>
-        <a href="https://www.thenewbarcelonapost.com/joan-linux-martinez-instantaneas-en-azul-noche/" target="_blank" rel="noopener">Joan Linux Martínez: instantànies en blau nit</a>
-      </li>
+      <li><span class="press-source">CulturaB</span><a href="https://culturab.cat/noticies/barri-prosperitat-tenim-escenes-blues-mes-importants-europa/" target="_blank" rel="noopener">Retrats de 40 anys de Blues a Barcelona</a></li>
+      <li><span class="press-source">CulturaB</span><a href="https://culturab.cat/noticies/tres-llibres-retraten-barcelona-no-timagines/" target="_blank" rel="noopener">Tres llibres que retraten una Barcelona que no t'imagines</a></li>
+      <li><span class="press-source">CulturaB</span><a href="https://culturab.cat/noticies/llibre-retrats-neixer-nevera-plena-desconeguts/" target="_blank" rel="noopener">El llibre de retrats que va néixer d'una nevera plena de desconeguts</a></li>
+      <li><span class="press-source">The New Barcelona Post</span><a href="https://www.thenewbarcelonapost.com/joan-linux-martinez-instantaneas-en-azul-noche/" target="_blank" rel="noopener">Joan Linux Martínez: instantànies en blau nit</a></li>
     </ul>
   </section>
 
-  <!-- LINKS -->
   <div class="links-bar">
     <span class="links-bar-label">Segueix-nos a:</span>
     <a href="https://instagram.com/pocallum" target="_blank" rel="noopener">@pocallum</a>
@@ -704,7 +238,6 @@
 </div>
 </main>
 
-<!-- CONTACTE -->
 <div class="contact-block" id="contacte">
   <div class="wrap">
     <span class="section-label">Contacte</span>
@@ -715,5 +248,6 @@
   </div>
 </div>
 
+<script data-goatcounter="https://about-pocallum.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
