@@ -306,6 +306,7 @@ input.wiz-invalid, textarea.wiz-invalid { border-color: var(--red) !important; }
 .wiz-fallback-label { font-size: 0.8rem; color: var(--grey-3); margin-bottom: calc(var(--unit) * 1); }
 @media (max-width: 480px) { #wizard-box { padding: calc(var(--unit) * 4) calc(var(--unit) * 3); } #wizard-nav { flex-direction: column; } .wiz-btn { width: 100%; text-align: center; } }
 
+
 /* ─────────────────────────────────────────────────────────────
    SECCIÓ ARTICLES
 ───────────────────────────────────────────────────────────── */
