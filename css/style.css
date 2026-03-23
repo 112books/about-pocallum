@@ -264,3 +264,12 @@ input.wiz-invalid, textarea.wiz-invalid { border-color: var(--red) !important; }
 .articles-loading { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--grey-3); padding: calc(var(--unit) * 2) 0; }
 .articles-more { display: inline-block; margin-top: calc(var(--unit) * 2); font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s; }
 .articles-more:hover { color: var(--black); border-color: var(--black); }
+/* Alineació vertical de les dues columnes al capdamunt */
+.comm-grid {
+  align-items: start;
+}
+
+/* Eliminar el border-bottom de l'últim cas (ja hi ha el de comm-footer) */
+.comm-case:last-child {
+  border-bottom: none;
+}
