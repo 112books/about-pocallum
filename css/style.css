@@ -787,3 +787,8 @@ input.wiz-invalid, textarea.wiz-invalid { border-color: var(--red) !important; }
   transition: color 0.15s, border-color 0.15s;
 }
 .articles-more:hover { color: var(--black); border-color: var(--black); }
+
+.comm-section .comm-grid {
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
