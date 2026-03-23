@@ -1,0 +1,114 @@
+/* =============================================================
+   comm.css — Secció Comunicació Cultural
+   Afegir a: css/comm.css
+   Enllaçar al <head> amb:
+   <link rel="stylesheet" href="css/comm.css?v=20260323">
+   ============================================================= */
+
+/* --- Intro --- */
+.comm-intro {
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+.comm-intro p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.comm-statement {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 1.5rem 0 !important;
+}
+
+/* --- Label de casos --- */
+.comm-cases-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 1.25rem;
+}
+
+/* --- Grid de casos --- */
+.comm-cases {
+  margin-bottom: 3rem;
+}
+
+.comm-case {
+  border-top: 1px solid currentColor;
+  opacity: 0.85;
+  padding: 1.25rem 0;
+  transition: opacity 0.2s ease;
+}
+
+.comm-case:hover {
+  opacity: 1;
+}
+
+.comm-case:last-child {
+  border-bottom: 1px solid currentColor;
+  opacity: 0.85;
+}
+
+.comm-case:last-child:hover {
+  opacity: 1;
+}
+
+/* Cas estrella */
+.comm-case--featured {
+  opacity: 1;
+  padding: 1.5rem 0;
+}
+
+.comm-case--featured .comm-case-name {
+  font-weight: 500;
+}
+
+/* Header de cada cas */
+.comm-case-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.comm-case-name {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.comm-case-years {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.comm-case-body {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  max-width: 600px;
+  margin-bottom: 0.4rem;
+  opacity: 0.85;
+}
+
+/* --- Bloc de tancament --- */
+.comm-closing {
+  max-width: 560px;
+}
+
+.comm-closing p {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.comm-closing .btn {
+  margin-top: 1rem;
+  display: inline-block;
+}
