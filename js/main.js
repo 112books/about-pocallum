@@ -186,7 +186,17 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
     document.body.appendChild(overlay);
     document.getElementById('wizard-close').addEventListener('click', closeModal);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closeModal(); return; }
+      if (e.key === 'Tab' && document.getElementById('wizard-overlay') && document.getElementById('wizard-overlay').style.display === 'flex') {
+        var box = document.getElementById('wizard-box');
+        var focusables = Array.from(box.querySelectorAll('button:not([disabled]), input:not([disabled]), textarea:not([disabled]), a[href], select:not([disabled])'));
+        if (!focusables.length) return;
+        var first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+        else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
+      }
+    });
   }
 
   function openModal() {
@@ -196,6 +206,7 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
     document.getElementById('wizard-overlay').style.display = 'flex';
     document.body.style.overflow = 'hidden';
     renderStep(0);
+    setTimeout(function () { var f = document.getElementById('wizard-box').querySelector('button, input, textarea, select, a[href]'); if (f) f.focus(); }, 50);
   }
 
   function closeModal() {

@@ -11,11 +11,17 @@
   <meta name="robots" content="index, follow">
   <meta name="keywords" content="fotògraf Barcelona, fotografia festivals Barcelona, fotografia cultural Barcelona, editor gràfic Barcelona, fotografia analògica Barcelona, Joan Linux Martinez">
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Joan Linux Martínez">
   <meta property="og:title" content="Joan Linux Martínez · Fotògraf professional · Barcelona">
   <meta property="og:description" content="Fotògraf professional especialitzat en cultura, escena musical i arts escèniques a Barcelona.">
   <meta property="og:url" content="https://about.pocallum.cat/">
   <meta property="og:image" content="https://about.pocallum.cat/img/2020-04-10-003.jpg">
+  <meta property="og:image:width" content="2345">
+  <meta property="og:image:height" content="1071">
   <meta property="og:locale" content="ca_ES">
+  <meta property="profile:first_name" content="Joan Linux">
+  <meta property="profile:last_name" content="Martínez i Serres">
+  <meta property="profile:username" content="pocallum">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Joan Linux Martínez · Fotògraf professional · Barcelona">
   <meta name="twitter:description" content="Fotògraf professional especialitzat en cultura, escena musical i arts escèniques a Barcelona.">
@@ -25,6 +31,7 @@
   <link rel="alternate" hreflang="en" href="https://about.pocallum.cat/en/">
   <link rel="alternate" hreflang="es" href="https://about.pocallum.cat/es/">
   <meta name="theme-color" content="#0a0a0a">
+  <link rel="preload" as="image" href="img/2020-04-10-003.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -106,12 +113,12 @@
     </div>
   </div>
   <div class="hero-img">
-    <img src="img/2020-04-10-003.jpg" alt="Joan Linux Martínez">
+    <img src="img/2020-04-10-003.jpg" alt="Joan Linux Martínez" width="2345" height="1071" fetchpriority="high" loading="eager">
   </div>
 </div>
 
 <main id="main-content">
-<select class="side-nav-mobile" onchange="document.querySelector(this.value).scrollIntoView({behavior:'smooth'});this.selectedIndex=0;">
+<select class="side-nav-mobile" aria-label="Navega a la secció" onchange="document.querySelector(this.value).scrollIntoView({behavior:'smooth'});this.selectedIndex=0;">
   <option value="" disabled selected>Navega a...</option>
   <option value="#qui-soc">Qui soc</option>
   <option value="#el-que-faig">El que faig</option>
