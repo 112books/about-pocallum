@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /CLAUDE.md
+
+Sitemap: https://about.pocallum.cat/sitemap.xml

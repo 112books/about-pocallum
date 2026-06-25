@@ -273,3 +273,9 @@ input.wiz-invalid, textarea.wiz-invalid { border-color: var(--red) !important; }
 .comm-case:last-child {
   border-bottom: none;
 }
+
+/* ─── Accessibilitat ────────────────────────────────────────── */
+.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { position: fixed; top: 0; left: 0; width: auto; height: auto; padding: 0.5rem 1rem; background: var(--black); color: var(--white); font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; letter-spacing: 0.08em; z-index: 10000; outline: 2px solid var(--red); outline-offset: 0; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
