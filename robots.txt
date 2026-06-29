@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /CLAUDE.md
+Disallow: /admin/
 
 Sitemap: https://about.pocallum.cat/sitemap.xml
+# llms.txt: https://about.pocallum.cat/llms.txt

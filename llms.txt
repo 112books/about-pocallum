@@ -1,63 +1,101 @@
 # Joan Linux Martínez i Serres
 
-> Fotògraf professional, editor gràfic i activista cultural a Barcelona. Especialitzat en festivals, concerts i arts escèniques. Fundador de 112 Books i impulsor de Ressona.eu.
+> Fotògraf professional, editor gràfic i activista cultural a Barcelona. Especialitzat en festivals de música, concerts i arts escèniques. Fundador de 112 Books (2020) i impulsor de Ressona.eu (2026). Resident a la Nau Bostik, Nou Barris, Barcelona.
 
-## Qui soc
+Last-Updated: 2026-06-29
+Canonical: https://about.pocallum.cat/
+Language: ca (primary), en (/en/), es (/es/)
 
-Joan Linux Martínez i Serres (Barcelona, 1972) és fotògraf professional, editor gràfic i activista de programari lliure vinculat al barri de Nou Barris, Barcelona. Treballa amb fotografia analògica —del 35 mm al gran format 10×8"— revelant i copiant al seu estudi-laboratori a la Nau Bostik. Més de vint anys de treball en fotografia cultural: blues, jazz, arts escèniques, festivals i carrer.
+---
+
+## Qui és Joan Linux Martínez
+
+Joan Linux Martínez i Serres (Barcelona, 1972) és fotògraf professional i editor gràfic a Barcelona amb més de vint-i-quatre anys de trajectòria en fotografia cultural. Treballa exclusivament amb fotografia analògica, des del format 35 mm fins al gran format 10×8 polzades, revelant i fent còpies artesanalment al seu estudi-laboratori a la Nau Bostik (Nou Barris, Barcelona). Des del 2002 és el fotògraf vinculat al Barcelona Blues Festival, un dels festivals de blues més longevs de Catalunya. Ha publicat nou fotobooks a través de la seva editorial independent 112 Books, entre 2020 i 2026. És professor de fotografia analògica a Llumàtics des del 2017 i a Cameras & Films (antiga Lomography Embassy Barcelona) des del 2011.
+
+## Who is Joan Linux Martínez (English)
+
+Joan Linux Martínez i Serres (born Barcelona, 1972) is a professional photographer, graphic editor and cultural activist based in Barcelona, Catalonia, Spain. He has over twenty-four years of experience in cultural photography, specialising in music festivals, concerts and performing arts. He works exclusively with analogue photography — from 35mm to large format 10×8 inches — developing and printing his own work at his studio-laboratory inside Nau Bostik, a self-managed cultural space in the Nou Barris neighbourhood of Barcelona. Since 2002 he has been the house photographer of the Barcelona Blues Festival. He is the founder of 112 Books (2020), an independent photobook publisher based in Barcelona, and has published nine photobooks between 2020 and 2026. He teaches analogue photography at Llumàtics (since 2017) and at Cameras & Films, the former Lomography Embassy Barcelona (since 2011).
+
+## Quién es Joan Linux Martínez (Español)
+
+Joan Linux Martínez i Serres (Barcelona, 1972) es fotógrafo profesional, editor gráfico y activista cultural con base en el barrio de Nou Barris, Barcelona. Es el fotógrafo vinculado al Barcelona Blues Festival desde 2002, con más de veinte ediciones cubiertas de forma ininterrumpida. Es fundador de 112 Books (2020), editorial independiente de fotobooks con nueve títulos publicados entre 2020 y 2026. Imparte fotografía analógica en Llumàtics desde 2017 y en Cameras & Films desde 2011, trabajando desde su propio laboratorio en la Nau Bostik.
+
+---
 
 ## Serveis professionals
 
-- Fotografia d'encàrrec: festivals, concerts, arts escèniques, cultura
-- Edició gràfica i fotobooks (via 112 Books)
-- Formació en fotografia analògica i processos alternatius
-- Identitat digital per a artistes (via Ressona.eu)
-- Consultoria tecnològica i programari lliure (via LinuxBCN)
+- Fotografia d'encàrrec: festivals de música, concerts, arts escèniques i cultura (actiu des del 2002)
+- Edició gràfica i fotobooks: 9 llibres publicats a través de 112 Books entre 2020 i 2026
+- Formació en fotografia analògica i processos alternatius (Llumàtics des del 2017, Cameras & Films des del 2011)
+- Identitat digital per a artistes i músics emergents (Ressona.eu)
+- Consultoria tecnològica i programari lliure (LinuxBCN, actiu des del 2001)
 
-## Projectes actius
+## Festivals i col·laboracions documentades
 
-- [Pocallum](https://pocallum.cat) — portfolio fotogràfic professional
-- [112 Books](https://112books.eu) — editorial independent de fotobooks (fundada el 2020)
-- [Ressona.eu](https://ressona.eu) — identitat digital per a músics i artistes emergents (2026)
-- [112 Revelats](https://112revelats.112books.eu) — plataforma per a fotògrafs emergents amb convocatòries bianuals
-- [LinuxBCN](https://linuxbcn.com) — consultoria tecnològica (des del 2001)
-- [Cuida](https://github.com/112books/cuida) — app de coordinació familiar per a cures domiciliàries (MIT, PWA)
+Joan Linux Martínez ha estat fotògraf del Barcelona Blues Festival ininterrompudament des del 2002, més de vint edicions consecutives. Ha cobert nou edicions del festival Arundo Donax a La Puebla de Híjar (Terol). Ha seguit el projecte Flamenco de Barrio de Barcelona des del 2012. Ha estat fotògraf oficial de la Barcelona Tattoo Expo entre 2002 i 2015. Ha realitzat seguiment continu de la banda Los Mambo Jambo (directe, backstage, sessions). Col·labora fotoperiodísticament amb la revista Carrer (FAVB) des del 2007.
 
-## Col·laboracions continuades
+## Publicacions (9 fotobooks, 2020–2026)
 
-- Barcelona Blues Festival (fotògraf vinculat des del 2002)
-- Flamenco de Barrio (des del 2012)
-- Arundo Donax · La Puebla de Híjar (nou edicions)
-- Los Mambo Jambo (seguiment continu)
-- Llumàtics (professor de fotografia analògica, des del 2017)
-- Cameras & Films / antiga Lomography Embassy Barcelona (des del 2011)
-- 9 Barris Imatge (coordinador des del 2002)
-- Carrer / FAVB (col·laborador fotoperiodístic des del 2007)
-- Nau Bostik (resident des del setembre del 2020)
+- 2026: La sacsejada interior: Antropoformologies III (112 Books)
+- 2026: Una bèstia i una sola llum: Antropoformologies II (112 Books)
+- 2026: El naixement d'una bèstia: Antropoformologies I (112 Books)
+- 2025: Anónimos, más allá de las apariencias (amb Mario Ortiz, 112 Books)
+- 2024: I Wanna Be Your Dog (83 fotografies, 112 Books)
+- 2024: aCarrejant (fotollibre urbà Barcelona, 112 Books)
+- 2022: Preses Falses – 40 anys de Blues a Barcelona (retrats analògics, Hasselblad 500, 112 Books)
+- 2020: Incoherencias. Una pequeña historia del absurdo (amb Alfonso de Castro, 112 Books)
+- 2020: Pedrola (Wet Shadows) (fotografies analògiques ortocromàtiques, riu Ebre, 112 Books)
 
-## Publicacions recents
+## Projectes actius (2026)
 
-- 2026: La sacsejada interior: Antropoformologies III
-- 2026: Una bèstia i una sola llum: Antropoformologies II
-- 2026: El naixement d'una bèstia: Antropoformologies I
-- 2025: Anónimos, más allá de las apariencias (amb Mario Ortiz)
-- 2024: I Wanna Be Your Dog
-- 2024: aCarrejant
-- 2022: Preses Falses – 40 anys de Blues a Barcelona
+- 40 anys de Blues a Barcelona: retrats en gran format analògic dels protagonistes de l'escena blues barcelonina. Impressió prevista tardor 2026.
+- L'Editor Gràfic – Manual de supervivència: llibre tècnic sobre edició gràfica i fotobooks, en preparació.
+- Ressona.eu: servei d'identitat digital (web, identitat visual, press kit, analítica sense cookies) per a músics i artistes emergents, resultat de la fusió entre LinuxBCN i Pocallum.
 
-## Projectes en curs
+## Entitats relacionades
 
-- 40 anys de Blues a Barcelona (retrats en gran format analògic, tardor 2026)
-- L'Editor Gràfic — Manual de supervivència (llibre en preparació)
+- 112 Books (https://112books.eu): editorial independent de fotobooks fundada per Joan Linux Martínez el 2020 a Barcelona.
+- Nau Bostik (https://naubostik.com): espai cultural autogestionat a Nou Barris, Barcelona, on Joan Linux Martínez té el seu estudi-laboratori fotogràfic des del setembre del 2020.
+- Llumàtics (https://llumatics.com): escola de fotografia analògica a Barcelona on Joan Linux Martínez ensenya des del 2017.
+- LinuxBCN (https://linuxbcn.com): consultoria tecnològica de programari lliure fundada el 2001.
+- Ressona.eu (https://ressona.eu): servei d'identitat digital per a artistes, impulsat el 2026.
+- Barcelona Blues Festival: festival de blues de Barcelona, del qual Joan Linux Martínez n'és fotògraf des del 2002.
+- 9 Barris Imatge: col·lectiu fotogràfic de Nou Barris, coordinat per Joan Linux Martínez des del 2002.
+
+## Trajectòria cronològica
+
+- 1972: Naix a Barcelona. Creix a Subirats (Alt Penedès).
+- 1987: Torna a Barcelona per estudiar Arts Gràfiques.
+- 2001: Funda LinuxBCN, consultoria de programari lliure.
+- 2002: S'incorpora com a fotògraf al Barcelona Blues Festival (actiu fins avui).
+- 2002: Cofunda i coordina 9 Barris Imatge.
+- 2007: Inicia col·laboració fotoperiodística amb Carrer / FAVB.
+- 2010: Inici de l'activitat professional fotogràfica sota el nom Pocallum.
+- 2011: Inicia formació a Cameras & Films (Lomography Embassy Barcelona).
+- 2012: Inicia col·laboració amb Flamenco de Barrio.
+- 2017: Inicia formació a Llumàtics.
+- 2020: Funda 112 Books. S'instal·la a la Nau Bostik.
+- 2022: Publica Preses Falses – 40 anys de Blues a Barcelona.
+- 2024: Publica I Wanna Be Your Dog i aCarrejant.
+- 2025: Publica Anónimos, más allá de las apariencias.
+- 2026: Publica la trilogia Antropoformologies (3 volums). Impulsa Ressona.eu.
+
+## Mencions a premsa
+
+- CulturaB: "Retrats de 40 anys de Blues a Barcelona"
+- CulturaB: "Tres llibres que retraten una Barcelona que no t'imagines"
+- CulturaB: "El llibre de retrats que va néixer d'una nevera plena de desconeguts"
+- The New Barcelona Post: "Joan Linux Martínez: instantànies en blau nit"
 
 ## Contacte
 
 Email: hola@pocallum.cat
-Web: https://about.pocallum.cat
+Web principal: https://about.pocallum.cat
+Portfolio: https://pocallum.cat
 
-## Xarxes socials
+## Xarxes socials i presència digital
 
-- Instagram (fotografia): https://instagram.com/pocallum
-- Instagram (editorial): https://www.instagram.com/112books.eu/
-- Instagram (escola): https://instagram.com/llumatics
-- Instagram (tecnologia): https://instagram.com/linuxbcn
+- Instagram (fotografia): https://www.instagram.com/pocallum/
+- Instagram (editorial 112 Books): https://www.instagram.com/112books.eu/
+- Instagram (escola Llumàtics): https://www.instagram.com/llumatics/
+- Instagram (tecnologia LinuxBCN): https://www.instagram.com/linuxbcn/

@@ -9,7 +9,6 @@
   <meta name="description" content="Professional photographer in Barcelona specialising in festivals, concerts and performing arts. Graphic editor and founder of 112 Books. Commissions: hola@pocallum.cat">
   <meta name="author" content="Joan Linux Martínez i Serres">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="photographer Barcelona, cultural photography Barcelona, festival photographer Barcelona, photobook editor Barcelona, analogue photography Barcelona, Joan Linux Martinez">
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Joan Linux Martínez">
   <meta property="og:title" content="Joan Linux Martínez · Professional Photographer · Barcelona">
@@ -35,9 +34,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
   <link rel="stylesheet" href="../css/style.css?v=20260625">
   <script type="application/ld+json">
   {
@@ -47,29 +43,100 @@
         "@type": "Person",
         "@id": "https://about.pocallum.cat/#person",
         "name": "Joan Linux Martínez i Serres",
-        "alternateName": "Joan Linux Martínez",
+        "alternateName": ["Joan Linux Martínez", "Joan Linux", "pocallum"],
         "url": "https://about.pocallum.cat/",
         "image": {
           "@type": "ImageObject",
-          "url": "https://about.pocallum.cat/img/2020-04-10-003.jpg"
+          "@id": "https://about.pocallum.cat/#photo",
+          "url": "https://about.pocallum.cat/img/2020-04-10-003.jpg",
+          "contentUrl": "https://about.pocallum.cat/img/2020-04-10-003.jpg",
+          "width": 2345,
+          "height": 1071,
+          "caption": "Joan Linux Martínez — pinhole self-portrait"
         },
         "jobTitle": ["Professional photographer", "Graphic editor", "Analogue photography teacher"],
-        "description": "Professional photographer in Barcelona specialising in festivals, concerts and performing arts. Graphic editor and founder of 112 Books. Free software activist.",
+        "description": "Professional photographer in Barcelona specialising in festivals, concerts and performing arts. Founder of 112 Books (2020), independent photobook publisher with nine titles published. Photographer linked to the Barcelona Blues Festival since 2002. Analogue photography teacher at Llumàtics since 2017.",
         "email": "hola@pocallum.cat",
+        "nationality": { "@type": "Country", "name": "Spain" },
+        "birthDate": "1972",
+        "birthPlace": { "@type": "Place", "name": "Barcelona" },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Barcelona",
           "addressRegion": "Catalonia",
           "addressCountry": "ES"
         },
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Professional photographer",
+            "occupationLocation": { "@type": "City", "name": "Barcelona" },
+            "skills": "Analogue photography, festival photography, portrait, large format"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Graphic editor and photobook publisher",
+            "occupationLocation": { "@type": "City", "name": "Barcelona" },
+            "skills": "Editorial design, photobooks, 112 Books"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Analogue photography teacher",
+            "occupationLocation": { "@type": "City", "name": "Barcelona" },
+            "skills": "Analogue photography, alternative processes, pinhole"
+          }
+        ],
+        "worksFor": [
+          {
+            "@type": "Organization",
+            "@id": "https://112books.eu/#org",
+            "name": "112 Books",
+            "url": "https://112books.eu"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://linuxbcn.com/#org",
+            "name": "LinuxBCN",
+            "url": "https://linuxbcn.com"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://llumatics.com/#org",
+            "name": "Llumàtics",
+            "url": "https://llumatics.com"
+          }
+        ],
+        "knowsAbout": [
+          "Analogue photography",
+          "Festival photography",
+          "Portrait photography",
+          "Large format photography",
+          "Photobook editing",
+          "Performing arts",
+          "Blues and jazz",
+          "Free and open-source software",
+          "Alternative photographic processes",
+          "Pinhole photography",
+          "Street photography",
+          "Cultural activism",
+          "Digital identity for artists",
+          "Technology consulting"
+        ],
+        "knowsLanguage": ["ca", "es", "en"],
         "sameAs": [
           "https://pocallum.cat",
-          "https://instagram.com/pocallum",
+          "https://www.instagram.com/pocallum/",
           "https://www.instagram.com/112books.eu/",
           "https://112books.eu",
           "https://linuxbcn.com",
-          "https://ressona.eu"
-        ]
+          "https://ressona.eu",
+          "https://blog.pocallum.cat"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "hola@pocallum.cat",
+          "contactType": "commissions"
+        }
       },
       {
         "@type": "WebSite",
@@ -77,7 +144,25 @@
         "url": "https://about.pocallum.cat/en/",
         "name": "Joan Linux Martínez · Professional Photographer · Barcelona",
         "inLanguage": "en",
+        "author": { "@id": "https://about.pocallum.cat/#person" },
         "about": { "@id": "https://about.pocallum.cat/#person" }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://about.pocallum.cat/#books",
+        "name": "Published works — Joan Linux Martínez",
+        "numberOfItems": 9,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "item": { "@type": "Book", "name": "La sacsejada interior: Antropoformologies III", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2026", "url": "https://www.112books.eu/producte/la-sacsejada-interior-antropoformologies-iii/" } },
+          { "@type": "ListItem", "position": 2, "item": { "@type": "Book", "name": "Una bèstia i una sola llum: Antropoformologies II", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2026", "url": "https://www.112books.eu/producte/una-bestia-i-una-sola-llum-antropoformologies-ii/" } },
+          { "@type": "ListItem", "position": 3, "item": { "@type": "Book", "name": "El naixement d'una bèstia: Antropoformologies I", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2026", "url": "https://www.112books.eu/producte/el-naixement-duna-bestia-antropoformologies-i/" } },
+          { "@type": "ListItem", "position": 4, "item": { "@type": "Book", "name": "Anónimos, más allá de las apariencias", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2025", "url": "https://www.112books.eu/producte/anonimos-mas-alla-de-las-apariencias/" } },
+          { "@type": "ListItem", "position": 5, "item": { "@type": "Book", "name": "I Wanna Be Your Dog", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2024", "url": "https://www.112books.eu/producte/i-wanna-be-your-dog/" } },
+          { "@type": "ListItem", "position": 6, "item": { "@type": "Book", "name": "aCarrejant", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2024", "url": "https://www.112books.eu/producte/acarrejant-de-joan-linux/" } },
+          { "@type": "ListItem", "position": 7, "item": { "@type": "Book", "name": "Preses Falses – 40 anys de Blues a Barcelona", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2022", "url": "https://www.112books.eu/producte/preses-falses-40-anys-de-blues-a-barcelona/" } },
+          { "@type": "ListItem", "position": 8, "item": { "@type": "Book", "name": "Incoherencias. Una pequeña historia del absurdo", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2020", "url": "https://www.112books.eu/producte/incoherencias-una-pequena-historia-del-absurdo/" } },
+          { "@type": "ListItem", "position": 9, "item": { "@type": "Book", "name": "Pedrola (Wet Shadows)", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2020", "url": "https://www.112books.eu/producte/pedrola/" } }
+        ]
       }
     ]
   }
@@ -113,7 +198,7 @@
     </div>
   </div>
   <div class="hero-img">
-    <img src="../img/2020-04-10-003.jpg" alt="Joan Linux Martínez" width="2345" height="1071" fetchpriority="high" loading="eager">
+    <img src="../img/2020-04-10-003.jpg" alt="Joan Linux Martínez — pinhole self-portrait, Barcelona 2020" width="2345" height="1071" fetchpriority="high" loading="eager">
     <figcaption>Pinhole self-portrait</figcaption>
   </div>
 </div>
@@ -152,6 +237,7 @@
       <span class="section-label" id="who-i-am">Who I am</span>
       <a href="#top" class="back-top" aria-label="Back to top" title="Back to top">↑</a>
     </div>
+    <p class="bio-intro">Joan Linux Martínez i Serres (born Barcelona, 1972) is a professional photographer, graphic editor and cultural activist based in Nou Barris, Barcelona. He has been the photographer linked to the Barcelona Blues Festival since 2002, covering over twenty consecutive editions. He is the founder of 112 Books (2020), an independent photobook publisher with nine titles published between 2020 and 2026. He teaches analogue photography at Llumàtics since 2017 and at Cameras &amp; Films since 2011.</p>
     <p>I was born in Barcelona in 1972 and grew up in Subirats (Alt Penedès), in a household shaped by my parents' work as ceramicists, painters and sculptors. At fifteen I returned to Barcelona to study Graphic Arts, sustaining the work through fanzines, independent magazines and an obstinate commitment to photography that has never let up.</p>
     <p>I am a photographer, graphic editor and cultural activist based in the Nou Barris district of Barcelona. Over twenty years working in cultural photography: blues, jazz, performing arts, festivals, street. I work by hand — from 35 mm to large-format 10×8" — developing and printing my own work in the darkroom at my studio inside <a href="https://naubostik.com" target="_blank" rel="noopener noreferrer">Nau Bostik</a>.</p>
     <div class="pull-quote">Photography is not innocent. That is precisely why it matters.</div>
