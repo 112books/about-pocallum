@@ -111,3 +111,14 @@ Cap acció de build — el `git push` és el desplegament.
 - Els comentaris CSS segueixen el format `/* ─── Títol ─── */`
 - Spacing basat en múltiples de `--unit` (`calc(var(--unit) * N)`)
 - El color d'accent és sempre `--red` (`#cc0000`), no vermells alternatius
+
+
+---
+
+## Control horari
+
+Skill actiu: `gestor-hores` — registra automàticament el temps de treball per sessió.
+
+- Logs a `.taques/about-pocallum/YYYY-MM-DD.md` (creat automàticament)
+- Comandes: `/time-log [tasca] [hores]`, `/time-report [periode]`, `/time-config [hores] [tarifa]`
+- No modificar manualment els fitxers `.taques/` — són append-only
