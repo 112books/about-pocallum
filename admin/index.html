@@ -266,7 +266,7 @@
     /* ── Chart ──────────────────────────────────────────────── */
     .chart-controls { display: flex; gap: .4rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
     .chart-sep { width: 1px; height: 24px; background: var(--line); margin: 0 .2rem; }
-    .period-btn, .group-btn {
+    .period-btn, .group-btn, .pg-btn {
       background: transparent;
       border: 1px solid var(--line);
       color: var(--mid);
@@ -277,8 +277,12 @@
       text-transform: uppercase;
       cursor: pointer;
     }
-    .period-btn:hover, .group-btn:hover { border-color: var(--mid); color: var(--fg); }
-    .period-btn.active, .group-btn.active { border-color: var(--accent); color: var(--accent); }
+    .period-btn:hover, .group-btn:hover, .pg-btn:hover { border-color: var(--mid); color: var(--fg); }
+    .period-btn.active, .group-btn.active, .pg-btn.active { border-color: var(--accent); color: var(--accent); }
+    .pg-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .pg-btn:disabled:hover { border-color: var(--line); color: var(--mid); }
+    .period-title { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-right: .2rem; }
+    .period-hint { font-size: 10px; color: var(--mid); margin-left: .35rem; }
     .chart-wrap { border: 1px solid var(--line); background: var(--bg2); padding: 1.25rem 1.25rem .75rem; height: 240px; position: relative; }
     .chart-wrap canvas { position: absolute; top: 1.25rem; left: 1.25rem; right: 1.25rem; bottom: .75rem; width: calc(100% - 2.5rem) !important; height: calc(100% - 2rem) !important; }
     .chart-summary { font-size: 11px; color: var(--mid); margin-top: .6rem; letter-spacing: .03em; }
@@ -330,6 +334,11 @@
     /* ── Grid 2 columnes ────────────────────────────────────── */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 
+    /* ── Gràfics de formatge ────────────────────────────────── */
+    .pie-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .pie-wrap { height: 300px; }
+    .pie-wrap canvas { position: absolute; top: 1rem; left: 1rem; right: 1rem; bottom: .75rem; width: calc(100% - 2rem) !important; height: calc(100% - 1.75rem) !important; }
+
     /* ── Insight ────────────────────────────────────────────── */
     .insight {
       background: var(--bg2);
@@ -360,6 +369,7 @@
     @media (max-width: 860px) {
       .kpis { grid-template-columns: repeat(2, 1fr); }
       .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+      .pie-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .dash-body { padding: 1rem; }
       .topbar { padding: .6rem 1rem; }
       .bar-row { grid-template-columns: 90px 1fr 40px; gap: .5rem; }
@@ -471,6 +481,20 @@
 
     <!-- TAB: Pàgines -->
     <div id="tab-pagines" class="tab-panel">
+      <div class="chart-controls pages-period" id="pages-period-controls">
+        <span class="period-title">període</span>
+        <button type="button" class="pg-btn" data-period="day">dia</button>
+        <button type="button" class="pg-btn" data-period="week">setm.</button>
+        <button type="button" class="pg-btn" data-period="month">mes</button>
+        <button type="button" class="pg-btn" data-period="quarter">trim.</button>
+        <button type="button" class="pg-btn" data-period="year">any</button>
+        <button type="button" class="pg-btn active" data-period="all">tot</button>
+        <span class="period-hint" id="pages-period-hint"></span>
+      </div>
+
+      <h2 class="section-title">Seccions més visitades</h2>
+      <div id="sections-wrap" class="bars"></div>
+
       <h2 class="section-title">Pàgines top</h2>
       <div id="pages-wrap" class="bars"></div>
 
@@ -493,6 +517,20 @@
         <div class="device-card"><div class="device-icon">📱</div><div class="device-label">Mòbil</div><div class="device-count" id="dev-mobile">—</div><div class="device-pct" id="dev-mobile-pct"></div></div>
         <div class="device-card"><div class="device-icon">⬜</div><div class="device-label">Tauleta</div><div class="device-count" id="dev-tablet">—</div><div class="device-pct" id="dev-tablet-pct"></div></div>
         <div class="device-card"><div class="device-icon">🖥</div><div class="device-label">Escriptori</div><div class="device-count" id="dev-desktop">—</div><div class="device-pct" id="dev-desktop-pct"></div></div>
+      </div>
+      <div class="pie-grid">
+        <div>
+          <h2 class="section-title">Repartiment per dispositiu</h2>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-devices"></canvas></div>
+        </div>
+        <div>
+          <h2 class="section-title">Repartiment per navegador</h2>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-browsers"></canvas></div>
+        </div>
+        <div>
+          <h2 class="section-title">Repartiment per sistema</h2>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-systems"></canvas></div>
+        </div>
       </div>
       <div class="grid-2">
         <div>
@@ -568,6 +606,8 @@ let globalData = null;
 let visitsChart = null;
 let chartPeriodDays = 7;
 let chartGroup = 'day';
+let pagesPeriod = 'all';
+const pieCharts = {};
 
 document.querySelectorAll('.period-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -583,6 +623,21 @@ document.querySelectorAll('.group-btn').forEach(btn => {
     document.querySelectorAll('.group-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     if (globalData) renderChart(globalData);
+  });
+});
+document.querySelectorAll('.pg-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.disabled) return;
+    pagesPeriod = btn.dataset.period;
+    document.querySelectorAll('.pg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (!globalData) return;
+    updatePagesPeriodUI(globalData);
+    renderSections(globalData);
+    renderPages(globalData);
+    renderInsightPagines(globalData);
+    animateWidths(document.getElementById('sections-wrap'));
+    animateWidths(document.getElementById('pages-wrap'));
   });
 });
 
@@ -642,6 +697,8 @@ function renderAll(data) {
   renderChart(data);
   renderLangKpi(data);
   renderLang(data);
+  updatePagesPeriodUI(data);
+  renderSections(data);
   renderPages(data);
   renderRefs(data);
   renderLocations(data);
@@ -651,11 +708,7 @@ function renderAll(data) {
   renderInsightPagines(data);
   renderInsightDispositius(data);
 
-  requestAnimationFrame(() => {
-    document.querySelectorAll('[data-w]').forEach(el => {
-      el.style.width = el.dataset.w + '%';
-    });
-  });
+  animateWidths();
 }
 
 /* ══ CHART.JS ════════════════════════════════════════════════ */
@@ -748,6 +801,87 @@ function groupHits(days, groupBy) {
   }));
 }
 
+/* ══ FILTRE DE PERÍODE (PÀGINES I SECCIONS) ══════════════════ */
+const PAGES_PERIODS = {
+  day:     { days: 1,    label: 'avui' },
+  week:    { days: 7,    label: 'últims 7 dies' },
+  month:   { days: 30,   label: 'últims 30 dies' },
+  quarter: { days: 90,   label: 'últims 90 dies' },
+  year:    { days: 365,  label: 'últims 365 dies' },
+  all:     { days: null, label: 'tot el període' },
+};
+
+function pagesPeriodRange(key) {
+  const def = PAGES_PERIODS[key] || PAGES_PERIODS.all;
+  if (!def.days) return { from: null, to: null, label: def.label };
+  return { from: daysAgo(def.days - 1), to: isoToday(), label: def.label };
+}
+
+function hasDailyData(data) {
+  const filled = m => !!m && typeof m === 'object' && Object.keys(m).length > 0;
+  return filled(data && data.pages_daily) || filled(data && data.sections_daily);
+}
+
+function sumDaily(daily, range) {
+  const out = {};
+  Object.entries(daily || {}).forEach(([key, series]) => {
+    let n = 0;
+    Object.entries(series || {}).forEach(([date, count]) => {
+      if (!range.from || (date >= range.from && date <= range.to)) n += (count || 0);
+    });
+    if (n > 0) out[key] = n;
+  });
+  return out;
+}
+
+function pagesPeriodData(data) {
+  const range = pagesPeriodRange(pagesPeriod);
+  const daily = hasDailyData(data);
+  let sectionMap, pageMap;
+
+  if (daily) {
+    sectionMap = sumDaily(data.sections_daily, range);
+    pageMap    = sumDaily(data.pages_daily, range);
+  } else {
+    // Compatibilitat amb analytics.json antics (sense desglossament diari):
+    // només es pot mostrar el total del període.
+    sectionMap = Object.assign({}, data.by_section || {});
+    pageMap = {};
+    (data.hits || []).forEach(h => { pageMap[h.path] = h.count; });
+  }
+  return { range, hasDaily: daily, sectionMap, pageMap };
+}
+
+function updatePagesPeriodUI(data) {
+  const daily = hasDailyData(data);
+  if (!daily) pagesPeriod = 'all';
+  document.querySelectorAll('.pg-btn').forEach(b => {
+    b.disabled = !daily && b.dataset.period !== 'all';
+    b.classList.toggle('active', b.dataset.period === pagesPeriod);
+  });
+
+  const hint = document.getElementById('pages-period-hint');
+  if (!hint) return;
+  if (!daily) {
+    hint.textContent = "· analytics.json antic: només total (s'actualitzarà al pròxim fetch)";
+  } else if (pagesPeriod === 'all') {
+    const p = data.period || {};
+    hint.textContent = p.start && p.end ? '· ' + fmtPeriod(p.start, p.end) : '';
+  } else {
+    const r = pagesPeriodRange(pagesPeriod);
+    hint.textContent = '· ' + fmtPeriod(r.from, r.to);
+  }
+}
+
+function animateWidths(root) {
+  requestAnimationFrame(() => {
+    (root || document).querySelectorAll('[data-w]').forEach(el => {
+      const w = String(el.dataset.w);
+      el.style.width = w.endsWith('%') ? w : w + '%';
+    });
+  });
+}
+
 /* ══ IDIOMA TAB ══════════════════════════════════════════════ */
 function renderLangKpi(data) {
   const el = document.getElementById('lang-kpi-wrap');
@@ -797,9 +931,20 @@ function renderLang(data) {
 }
 
 /* ══ PÀGINES TAB ═════════════════════════════════════════════ */
+function renderSections(data) {
+  const { sectionMap } = pagesPeriodData(data);
+  const items = Object.entries(sectionMap)
+    .map(([k,v]) => ({ name: CFG.sectionNames[k] || k, count: v }))
+    .sort((a,b) => b.count - a.count);
+  renderBars('sections-wrap', items);
+}
+
 function renderPages(data) {
-  const hits = (data.hits || []).slice(0, 15);
-  const items = hits.map(h => ({ name: h.path, count: h.count, href: h.path }));
+  const { pageMap } = pagesPeriodData(data);
+  const items = Object.entries(pageMap)
+    .map(([path, count]) => ({ name: path, count, href: path }))
+    .sort((a,b) => b.count - a.count)
+    .slice(0, 15);
   renderBars('pages-wrap', items, { withLinks: true, colorClass: 'ink2' });
 }
 
@@ -845,6 +990,12 @@ function renderDevices(data) {
   setText('dev-tablet-pct',  tablet  > 0 ? pct(tablet)  : '');
   setText('dev-desktop',     desktop > 0 ? fmt(desktop) : '—');
   setText('dev-desktop-pct', desktop > 0 ? pct(desktop) : '');
+
+  renderPie('pie-devices', [
+    { name: 'Mòbil',      count: mobile  },
+    { name: 'Tauleta',    count: tablet  },
+    { name: 'Escriptori', count: desktop },
+  ], { maxSlices: 3 });
 }
 
 const BROWSER_ICON = { chrome:'🟡',chromium:'🟡',firefox:'🦊',safari:'🔵',edge:'🔷',opera:'🔴',samsung:'📱',brave:'🦁',vivaldi:'🔴',ie:'🔵' };
@@ -855,6 +1006,80 @@ function renderBrowsersSystems(data) {
   const systems  = (data.systems ||[]).map(s => ({ name: getIcon(s.name||'',OS_ICON)     +' '+(s.name||'?'), count: s.count }));
   renderBars('browsers-wrap', browsers);
   renderBars('systems-wrap',  systems);
+  renderPie('pie-browsers', browsers, { maxSlices: 6 });
+  renderPie('pie-systems',  systems,  { maxSlices: 6 });
+}
+
+/* ══ GRÀFICS DE FORMATGE ═════════════════════════════════════ */
+const PIE_COLORS = ['#cc0000', '#4a90d9', '#4caf50', '#aa0000', '#777777', '#b58b2a', '#7a4f9e'];
+
+function pieSlices(items, maxSlices) {
+  const sorted = (items || []).filter(i => (i.count || 0) > 0).sort((a,b) => b.count - a.count);
+  if (sorted.length <= maxSlices) return sorted;
+  const head  = sorted.slice(0, maxSlices - 1);
+  const other = sorted.slice(maxSlices - 1).reduce((s,i) => s + i.count, 0);
+  return other > 0 ? head.concat([{ name: 'Altres', count: other }]) : head;
+}
+
+function renderPie(canvasId, items, opts = {}) {
+  if (typeof Chart === 'undefined') return;
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+
+  const slices = pieSlices(items, opts.maxSlices || 6);
+  if (pieCharts[canvasId]) { pieCharts[canvasId].destroy(); delete pieCharts[canvasId]; }
+  if (!slices.length) return;
+
+  const labels = slices.map(s => s.name);
+  const values = slices.map(s => s.count);
+  const colors = slices.map((s,i) => s.name === 'Altres' ? '#3a3a3a' : PIE_COLORS[i % PIE_COLORS.length]);
+
+  pieCharts[canvasId] = new Chart(canvas.getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels,
+      datasets: [{
+        data: values,
+        backgroundColor: colors,
+        borderColor: '#111111',
+        borderWidth: 2,
+        hoverOffset: 4,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            boxWidth: 9, boxHeight: 9, padding: 10, color: '#777777',
+            generateLabels(chart) {
+              const ds = chart.data.datasets[0];
+              const t  = ds.data.reduce((s,v) => s + v, 0) || 1;
+              return chart.data.labels.map((label, i) => ({
+                text: label + ' · ' + fmt(ds.data[i]) + ' (' + Math.round(ds.data[i] / t * 100) + '%)',
+                fillStyle: ds.backgroundColor[i],
+                strokeStyle: ds.backgroundColor[i],
+                lineWidth: 0,
+                index: i,
+                hidden: !chart.getDataVisibility(i),
+              }));
+            },
+          },
+        },
+        tooltip: {
+          backgroundColor: '#111111', borderColor: '#1c1c1c', borderWidth: 1,
+          titleColor: '#f0f0f0', bodyColor: '#777777', padding: 10,
+          callbacks: {
+            label: c => {
+              const t = c.dataset.data.reduce((s,v) => s + v, 0) || 1;
+              return ' ' + c.label + ': ' + fmt(c.parsed) + ' (' + Math.round(c.parsed / t * 100) + '%)';
+            },
+          },
+        },
+      },
+    },
+  });
 }
 
 /* ══ INSIGHTS ════════════════════════════════════════════════ */
@@ -901,7 +1126,10 @@ function renderInsightPagines(data) {
   const total = data.total || 0;
   if (!total) return;
   const lines = [];
+  const { sectionMap } = pagesPeriodData(data);
   const byLang = Object.entries(data.by_lang||{}).sort((a,b)=>b[1]-a[1]);
+  const bySec  = Object.entries(sectionMap).sort((a,b)=>b[1]-a[1]);
+  const secTotal = bySec.reduce((s, [,v]) => s + v, 0);
   const NAMES  = {ca:'Català',es:'Castellà',en:'Anglès',fr:'Francès',de:'Alemany',it:'Italià',pt:'Portuguès'};
 
   if (byLang.length) {
@@ -914,6 +1142,12 @@ function renderInsightPagines(data) {
       const trend2 = p2 >= 20 ? ' — <em style="color:var(--green)">bona tracció internacional</em>' : '';
       lines.push(`Segon idioma: <em>${NAMES[l2]||l2}</em> ${p2}%${trend2}.`);
     }
+  }
+
+  if (bySec.length && secTotal > 0) {
+    const [sec, cnt] = bySec[0];
+    const secName = CFG.sectionNames[sec] || sec;
+    lines.push('La secció més visitada és <em>' + secName + '</em> amb ' + fmt(cnt) + ' visites (' + Math.round(cnt/secTotal*100) + '% del total del període).');
   }
 
   if (!(data.refs||[]).length) {
@@ -1132,6 +1366,14 @@ function processLiveData(raw, start, end) {
     return null;
   }
 
+  function extractSection(path) {
+    const parts = (path || '').replace(/^\/|\/$/g,'').split('/').filter(Boolean);
+    if (!parts.length) return 'inici';
+    let idx = LANGS.has(parts[0]) ? 1 : 0;
+    if (idx === 0 && parts.length > 1 && LANGS.has(parts[1])) idx = 2;
+    return parts[idx] || 'inici';
+  }
+
   function normItems(src) {
     if (!src) return [];
     const list = Array.isArray(src) ? src : (src.stats || []);
@@ -1145,7 +1387,8 @@ function processLiveData(raw, start, end) {
   }
 
   const hitsList = (raw.hits && raw.hits.hits) || [];
-  const byLang = {}, hitsByDay = {}, hitsPages = {};
+  const byLang = {}, bySection = {}, hitsByDay = {}, hitsPages = {};
+  const pagesDaily = {}, sectionsDaily = {};
   let total = 0;
 
   hitsList.forEach(item => {
@@ -1153,7 +1396,8 @@ function processLiveData(raw, start, end) {
     const isEvent = item.event || false;
     if (isEvent) return;
 
-    const lang = extractLang(path);
+    const lang    = extractLang(path);
+    const section = extractSection(path);
     let pathTotal = 0;
 
     (item.stats || []).forEach(s => {
@@ -1163,7 +1407,12 @@ function processLiveData(raw, start, end) {
       total       += count;
       pathTotal   += count;
       if (lang) byLang[lang]    = (byLang[lang]  || 0) + count;
-      if (date) hitsByDay[date] = (hitsByDay[date] || 0) + count;
+      bySection[section] = (bySection[section] || 0) + count;
+      if (date) {
+        hitsByDay[date] = (hitsByDay[date] || 0) + count;
+        (pagesDaily[path] = pagesDaily[path] || {})[date] = (pagesDaily[path][date] || 0) + count;
+        (sectionsDaily[section] = sectionsDaily[section] || {})[date] = (sectionsDaily[section][date] || 0) + count;
+      }
     });
 
     if (pathTotal > 0) hitsPages[path] = (hitsPages[path] || 0) + pathTotal;
@@ -1182,6 +1431,9 @@ function processLiveData(raw, start, end) {
     hits_by_day:  hitsByDayList,
     hits:         hitsTop,
     by_lang:      byLang,
+    by_section:   bySection,
+    pages_daily:  pagesDaily,
+    sections_daily: sectionsDaily,
     browsers:     normItems(raw.browsers),
     systems:      normItems(raw.systems),
     sizes:        normItems(raw.sizes),
