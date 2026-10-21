@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21T10:38:46.205439Z",
+  "generated": "2026-10-21T11:27:13.223834Z",
   "period": {
     "start": "2025-10-21",
     "end": "2026-10-21"
@@ -10,6 +10,8 @@
   "hits": [],
   "by_lang": {},
   "by_section": {},
+  "pages_daily": {},
+  "sections_daily": {},
   "noticies_top": [],
   "festivals_top": [],
   "wizard_funnel": {
