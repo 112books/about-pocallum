@@ -599,6 +599,12 @@ function showTab(id, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
+  // Els formatges es creen amb la pestanya oculta (amplada 0): en tornar-la a
+  // mostrar es reconstrueixen perquè el canvas agafi la mida real.
+  if (id === 'dispositius' && globalData) {
+    renderDevices(globalData);
+    renderBrowsersSystems(globalData);
+  }
 }
 
 /* ══ ESTAT GLOBAL ═════════════════════════════════════════════ */
@@ -822,6 +828,12 @@ function hasDailyData(data) {
   return filled(data && data.pages_daily) || filled(data && data.sections_daily);
 }
 
+// Distingeix "JSON antic sense els camps" de "camps presents però sense
+// visites encara": tots dos desactiven el filtre, però el missatge és diferent.
+function hasDailyStructure(data) {
+  return !!data && ('pages_daily' in data || 'sections_daily' in data);
+}
+
 function sumDaily(daily, range) {
   const out = {};
   Object.entries(daily || {}).forEach(([key, series]) => {
@@ -863,7 +875,9 @@ function updatePagesPeriodUI(data) {
   const hint = document.getElementById('pages-period-hint');
   if (!hint) return;
   if (!daily) {
-    hint.textContent = "· analytics.json antic: només total (s'actualitzarà al pròxim fetch)";
+    hint.textContent = hasDailyStructure(data)
+      ? "· sense visites amb detall diari encara; els filtres s'activaran quan n'hi hagi"
+      : "· analytics.json antic: només total (s'actualitzarà al pròxim fetch)";
   } else if (pagesPeriod === 'all') {
     const p = data.period || {};
     hint.textContent = p.start && p.end ? '· ' + fmtPeriod(p.start, p.end) : '';
