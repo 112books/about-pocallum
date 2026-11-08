@@ -72,6 +72,13 @@ strong { font-weight: 500; color: var(--black); }
 .traj-list li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 2) 0; border-top: 1px solid var(--grey-2); font-size: 1rem; color: var(--grey-4); align-items: baseline; }
 .traj-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 300; color: var(--grey-3); letter-spacing: 0.06em; }
 
+/* ─── FAQ ──────────────────────────────────────────────────── */
+.faq-list { margin-top: calc(var(--unit) * 2); }
+.faq-item { padding: calc(var(--unit) * 3) 0; border-top: 1px solid var(--grey-2); }
+.faq-item:first-child { border-top: none; padding-top: 0; }
+.faq-item h3 { margin-bottom: calc(var(--unit) * 1); }
+.faq-item p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0; }
+
 /* ─── Premsa ────────────────────────────────────────────────── */
 .press-list { list-style: none; margin-top: calc(var(--unit) * 2); }
 .press-list li { display: grid; grid-template-columns: 10rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 2) 0; border-top: 1px solid var(--grey-2); font-size: 1rem; align-items: baseline; }

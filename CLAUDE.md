@@ -88,7 +88,10 @@ Quan es modifiquen `style.css` o `main.js`, cal incrementar el número de versi�
 6. `#trajectoria`
 7. `#articles` (carregats via RSS)
 8. `#premsa`
-9. `#contacte` (footer negre)
+9. `#faq` (preguntes freqüents, amb `FAQPage` al JSON-LD)
+10. `#contacte` (footer negre)
+
+Els `id` de les seccions estan traduïts a cada idioma (`#prensa`/`#press`, `#contacto`/`#contact`…). Mantén la coherència entre l'`id`, el nav lateral i el selector mòbil de cada fitxer.
 
 ## Funcionalitats JS (`main.js`)
 

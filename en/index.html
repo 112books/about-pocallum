@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://about.pocallum.cat/en/">
   <meta name="description" content="Professional photographer in Barcelona specialising in festivals, concerts and performing arts. Graphic editor and founder of 112 Books. Commissions: hola@pocallum.cat">
   <meta name="author" content="Joan Linux Martínez i Serres">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Joan Linux Martínez">
   <meta property="og:title" content="Joan Linux Martínez · Professional Photographer · Barcelona">
@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=20261108b">
+  <link rel="stylesheet" href="../css/style.css?v=20261108c">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -140,6 +140,16 @@
           "https://ressona.eu",
           "https://blog.pocallum.cat"
         ],
+        "memberOf": [
+          { "@type": "Organization", "name": "Nau Bostik", "url": "https://naubostik.com" },
+          { "@type": "Organization", "name": "9 Barris Imatge", "url": "https://9barrisimatge.org" }
+        ],
+        "subjectOf": [
+          { "@type": "WebPage", "url": "https://culturab.cat/noticies/barri-prosperitat-tenim-escenes-blues-mes-importants-europa/", "name": "Retrats de 40 anys de Blues a Barcelona", "inLanguage": "ca" },
+          { "@type": "WebPage", "url": "https://culturab.cat/noticies/tres-llibres-retraten-barcelona-no-timagines/", "name": "Tres llibres que retraten una Barcelona que no t'imagines", "inLanguage": "ca" },
+          { "@type": "WebPage", "url": "https://culturab.cat/noticies/llibre-retrats-neixer-nevera-plena-desconeguts/", "name": "El llibre de retrats que va néixer d'una nevera plena de desconeguts", "inLanguage": "ca" },
+          { "@type": "WebPage", "url": "https://www.thenewbarcelonapost.com/joan-linux-martinez-instantaneas-en-azul-noche/", "name": "Joan Linux Martínez: instantànies en blau nit", "inLanguage": "ca" }
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "hola@pocallum.cat",
@@ -183,6 +193,19 @@
           { "@type": "ListItem", "position": 8, "item": { "@type": "Book", "name": "Preses Falses – 40 anys de Blues a Barcelona", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2022", "url": "https://www.112books.eu/producte/preses-falses-40-anys-de-blues-a-barcelona/" } },
           { "@type": "ListItem", "position": 9, "item": { "@type": "Book", "name": "Incoherencias. Una pequeña historia del absurdo", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2020", "url": "https://www.112books.eu/producte/incoherencias-una-pequena-historia-del-absurdo/" } },
           { "@type": "ListItem", "position": 10, "item": { "@type": "Book", "name": "Pedrola (Wet Shadows)", "author": { "@id": "https://about.pocallum.cat/#person" }, "publisher": { "@id": "https://112books.eu/#org" }, "datePublished": "2020", "url": "https://www.112books.eu/producte/pedrola/" } }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://about.pocallum.cat/en/#faq",
+        "inLanguage": "en",
+        "mainEntity": [
+          { "@type": "Question", "name": "What exactly does Joan Linux Martínez do?", "acceptedAnswer": { "@type": "Answer", "text": "He is a professional photographer, graphic editor and analogue photography teacher based in Barcelona. He works on four fronts: commissioned photography of festivals, concerts and performing arts; graphic editing and photobooks at 112 Books; analogue photography tuition; and technology consulting with LinuxBCN." } },
+          { "@type": "Question", "name": "Does he shoot analogue or digital?", "acceptedAnswer": { "@type": "Answer", "text": "His work is analogue end to end: from 35 mm to 10×8 inch large format, developed and printed by himself in his darkroom at Nau Bostik. Professional commissions are delivered digitised." } },
+          { "@type": "Question", "name": "Where does he work and how far does he travel?", "acceptedAnswer": { "@type": "Answer", "text": "He is based in Barcelona, in the Nou Barris district, and works mainly in the city and the metropolitan area. For specific projects he travels further afield." } },
+          { "@type": "Question", "name": "Can he be hired to cover a festival or a concert?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. He has been the photographer linked to the Barcelona Blues Festival since 2002 without interruption, was official photographer of the Barcelona Tattoo Expo between 2002 and 2015, and works regularly with bands, companies and festivals." } },
+          { "@type": "Question", "name": "Where can his books be bought?", "acceptedAnswer": { "@type": "Answer", "text": "The photobooks can be seen at 112books.eu. Sales of «40 anys de blues a Barcelona» (2026) are handled directly by the Societat de Blues de Barcelona." } },
+          { "@type": "Question", "name": "Does he teach photography courses or workshops?", "acceptedAnswer": { "@type": "Answer", "text": "Yes: analogue photography, alternative processes and pinhole photography at Llumàtics since 2017, and tuition at Cameras & Films (the former Lomography Embassy Barcelona) since 2011." } }
         ]
       }
     ]
@@ -235,6 +258,7 @@
   <option value="#timeline">Timeline</option>
   <option value="#articles">Articles</option>
   <option value="#press">Press</option>
+  <option value="#faq">FAQ</option>
   <option value="#contact">Contact</option>
 </select>
 <div class="page-body">
@@ -248,6 +272,7 @@
   <a href="#timeline">Timeline</a>
   <a href="#articles">Articles</a>
   <a href="#press">Press</a>
+  <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
 </nav>
 <div class="page-content">
@@ -382,7 +407,7 @@
         <div class="inprogress-dot"></div>
         <div>
           <h3><a href="https://www.112books.eu/product/40-anys-de-blues-a-barcelona/" target="_blank" rel="noopener noreferrer">40 Years of Blues in Barcelona</a></h3>
-          <p>The book is out: six years of work, 150 protagonists, 150 sessions and 328 pages in large-format photochemical print, with texts by Manuel López Poy and a foreword by David Moreu. But make no mistake — the project is far from over. We are in the middle of the promotion, with the launch on 6 November at Collblanc–La Torrassa and the accompanying photographic exhibition. There is still a long way to go, and no intention of stopping now.</p>
+          <p>The book is out: six years of work, 150 protagonists, 150 sessions and 328 pages in large-format photochemical print, with texts by Manuel López Poy and a foreword by David Moreu. But make no mistake — the project is far from over. We are in the middle of the promotion, with the launch on 6 November at Collblanc–La Torrassa and the accompanying photographic exhibition. There is still a long way to go, and no intention of stopping now. Follow the project at <a href="https://40anysblues.112books.eu/" target="_blank" rel="noopener noreferrer">40anysblues.112books.eu</a>.</p>
         </div>
       </li>
       <li>
@@ -486,6 +511,40 @@
     </ul>
   </section>
 
+
+  <section>
+    <div class="section-header">
+      <h2 class="section-label" id="faq">Frequently asked questions</h2>
+      <a href="#top" class="back-top" aria-label="Back to top" title="Back to top">↑</a>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What exactly does Joan Linux Martínez do?</h3>
+        <p>He is a professional photographer, graphic editor and analogue photography teacher based in Barcelona. He works on four fronts: commissioned photography of festivals, concerts and performing arts; graphic editing and photobooks at 112 Books; analogue photography tuition; and technology consulting with LinuxBCN.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does he shoot analogue or digital?</h3>
+        <p>His work is analogue end to end: from 35 mm to 10×8 inch large format, developed and printed by himself in his darkroom at Nau Bostik. Professional commissions are delivered digitised.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where does he work and how far does he travel?</h3>
+        <p>He is based in Barcelona, in the Nou Barris district, and works mainly in the city and the metropolitan area. For specific projects he travels further afield.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can he be hired to cover a festival or a concert?</h3>
+        <p>Yes. He has been the photographer linked to the Barcelona Blues Festival since 2002 without interruption, was official photographer of the Barcelona Tattoo Expo between 2002 and 2015, and works regularly with bands, companies and festivals.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where can his books be bought?</h3>
+        <p>The photobooks can be seen at 112books.eu. Sales of «40 anys de blues a Barcelona» (2026) are handled directly by the Societat de Blues de Barcelona.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does he teach photography courses or workshops?</h3>
+        <p>Yes: analogue photography, alternative processes and pinhole photography at Llumàtics since 2017, and tuition at Cameras &amp; Films (the former Lomography Embassy Barcelona) since 2011.</p>
+      </div>
+    </div>
+  </section>
+
   <div class="links-bar">
     <span class="links-bar-label">Follow us:</span>
     <a href="https://instagram.com/pocallum" target="_blank" rel="noopener noreferrer">@pocallum</a>
@@ -510,6 +569,6 @@
   </div>
 </div>
 
-<script src="../js/main.js?v=20261108b" defer></script>
+<script src="../js/main.js?v=20261108c" defer></script>
 </body>
 </html>
