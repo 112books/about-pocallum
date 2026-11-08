@@ -527,33 +527,34 @@ document.querySelectorAll('a[data-mailto]').forEach(function (el) {
 })();
 // ─── Articles via RSS ─────────────────────────────────────────
 (function () {
-  var feeds = {
-    'articles-list-ca': 'https://pocallum.cat/feed/',
-    'articles-list-en': 'https://pocallum.cat/en/feed/',
-    'articles-list-es': 'https://pocallum.cat/es/feed/'
-  };
+  // El blog només existeix en català: les tres versions llegeixen el mateix feed.
+  var feedUrl = 'https://blog.pocallum.cat/feed/';
+  var lists = ['articles-list-ca', 'articles-list-en', 'articles-list-es'];
 
   var listId = null;
-  for (var id in feeds) {
-    if (document.getElementById(id)) { listId = id; break; }
+  for (var i = 0; i < lists.length; i++) {
+    if (document.getElementById(lists[i])) { listId = lists[i]; break; }
   }
   if (!listId) return;
-
-  var feedUrl = feeds[listId];
   var apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+
+  // Els títols són en català; només canvia el format de la data segons l'idioma.
+  var locales = { ca: 'ca-ES', es: 'es-ES', en: 'en-GB' };
+  var loc = locales[document.documentElement.lang] || 'ca-ES';
 
   fetch(apiUrl)
     .then(function (r) { return r.json(); })
     .then(function (data) {
       var list = document.getElementById(listId);
+      if (!list) return;
       if (!data.items || !data.items.length) {
         list.innerHTML = '';
         return;
       }
       list.innerHTML = data.items.slice(0, 5).map(function (item) {
-        var date = item.pubDate ? new Date(item.pubDate).toLocaleDateString('ca-ES', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+        var date = item.pubDate ? new Date(item.pubDate.replace(' ', 'T')).toLocaleDateString(loc, { year: 'numeric', month: 'long', day: 'numeric' }) : '';
         return '<li>' +
-          '<a href="' + item.link + '" target="_blank" rel="noopener" class="article-link">' + item.title + '</a>' +
+          '<a href="' + item.link + '" target="_blank" rel="noopener noreferrer" class="article-link">' + item.title + '</a>' +
           (date ? '<span class="article-meta">' + date + '</span>' : '') +
           '</li>';
       }).join('');

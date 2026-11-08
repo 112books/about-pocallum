@@ -112,7 +112,8 @@ Joan Linux Martínez ha estat fotògraf del Barcelona Blues Festival ininterromp
 Email: hola@pocallum.cat
 Web principal: https://about.pocallum.cat
 Portfolio: https://pocallum.cat
-Blog: https://blog.pocallum.cat
+Blog: https://blog.pocallum.cat (només en català)
+RSS del blog: https://blog.pocallum.cat/feed/
 
 ## Xarxes socials i presència digital
 
