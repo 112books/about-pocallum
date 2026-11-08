@@ -15,6 +15,10 @@ HTML estàtic pur, sense framework, sense sistema de build, sense Hugo. Desplega
 ├── css/style.css       ← CSS compartit per totes les versions
 ├── js/main.js          ← JS compartit (analítica, mailto, wizard, RSS)
 ├── img/                ← Imatges estàtiques
+├── robots.txt          ← Cercadors i assistents d'IA (admin i CLAUDE.md exclosos)
+├── sitemap.xml         ← Sitemap amb hreflang i lastmod
+├── llms.txt            ← Fitxa de fets per a assistents d'IA (CA/EN/ES)
+├── admin/index.html    ← Panell d'estadístiques (noindex)
 └── CNAME               ← about.pocallum.cat (GitHub Pages)
 ```
 
@@ -29,6 +33,15 @@ HTML estàtic pur, sense framework, sense sistema de build, sense Hugo. Desplega
 - **Analítica** — Goatcounter (`about-pocallum.goatcounter.com`), sense cookies
 - **Formulari** — Formspree (`https://formspree.io/f/xnjgrpnn`)
 - **Articles** — RSS via `api.rss2json.com` des de `pocallum.cat/feed/`
+
+## SEO i assistents d'IA
+
+- **Capçaleres**: `title`, `description`, Open Graph i Twitter Card propis de cada idioma, amb `hreflang` recíprocs i canonical per versió. Qualsevol metadada nova s'ha d'afegir als tres fitxers.
+- **JSON-LD** (`@graph`): `Person`, `WebSite`, `ProfilePage` i `ItemList` de llibres. En afegir un títol cal tocar l'`ItemList` (posició i `numberOfItems`) als tres HTML.
+- **Jerarquia de headings**: `h1` únic (el nom) → `h2.section-label` per secció → `h3` per element. Els títols grans dins d'una secció fan servir `h3.section-heading`.
+- **`llms.txt`**: fitxa de fets per a models. Actualitza-la quan canviï el nombre de llibres, l'estat dels projectes o el contacte.
+- **`sitemap.xml`**: actualitzar el `lastmod` quan canviï el contingut.
+- **`robots.txt`**: permet explícitament els principals crawlers d'IA; manté `/admin/` i `/CLAUDE.md` exclosos.
 
 ## Cache busting
 

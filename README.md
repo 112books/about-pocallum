@@ -13,6 +13,10 @@ Estàtic, sense base de dades, sense dependències externes (excepte Google Font
 ├── css/style.css       ← CSS compartit per totes les versions
 ├── js/main.js          ← JS compartit: Goatcounter, mailto ofuscat, wizard modal
 ├── img/                ← Imatges
+├── robots.txt          ← Robots: crawlers i assistents d'IA
+├── sitemap.xml         ← Sitemap amb hreflang i lastmod
+├── llms.txt            ← Fitxa de fets per a assistents d'IA
+├── admin/index.html    ← Panell d'estadístiques (noindex)
 ├── CNAME               ← Domini personalitzat per GitHub Pages
 └── README.md           ← Aquest fitxer
 ```
@@ -59,6 +63,14 @@ Per forçar que els navegadors descarreguin fitxers actualitzats, incrementa el 
 <link rel="stylesheet" href="css/style.css?v=20260320">
 <script src="js/main.js?v=20260320" defer></script>
 ```
+
+## SEO i assistents d'IA
+
+- **Metadades**: cada idioma té el seu `title`, `description`, Open Graph, Twitter Card i `hreflang` recíprocs amb canonical propi.
+- **Dades estructurades**: bloc JSON-LD amb `Person`, `WebSite`, `ProfilePage` i la llista de llibres (`ItemList`). Si afegeixes un títol, actualitza l'`ItemList` i el `numberOfItems` als tres fitxers.
+- **`llms.txt`**: resum de fets en català (amb versions EN/ES) adreçat a models de llenguatge. Actualitza'l quan canvien els llibres, els projectes o el contacte.
+- **`sitemap.xml`**: recorda actualitzar el `lastmod`.
+- **`robots.txt`**: permet explícitament GPTBot, ClaudeBot, PerplexityBot, Google-Extended i companyia; `/admin/` i `/CLAUDE.md` queden fora.
 
 ## Afegir un nou idioma
 
