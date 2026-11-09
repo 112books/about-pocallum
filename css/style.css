@@ -15,7 +15,7 @@ body { background: var(--white); color: var(--black); font-family: 'IBM Plex San
 
 /* ─── Hero ──────────────────────────────────────────────────── */
 .hero { display: grid; grid-template-columns: 1fr 3fr; min-height: 560px; border-bottom: 3px solid var(--black); }
-@media (max-width: 600px) { .hero { grid-template-columns: 1fr; min-height: auto; } .hero-img { min-height: 260px; order: -1; } }
+@media (max-width: 600px) { .hero { grid-template-columns: 1fr; min-height: auto; } .hero-img { min-height: 260px; order: -1; } .hero-img picture, .hero-img img { height: auto; } .hero-img img { width: 100%; object-fit: fill; } }
 .hero-text { padding: calc(var(--unit) * 8) var(--pad) calc(var(--unit) * 6); display: flex; flex-direction: column; justify-content: space-between; }
 .site-tag { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; font-weight: 400; letter-spacing: 0.16em; color: var(--grey-3); text-transform: uppercase; display: block; margin-bottom: calc(var(--unit) * 2); }
 h1 { font-family: 'IBM Plex Sans', Helvetica, sans-serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; }
@@ -23,9 +23,10 @@ h1 .nick { font-weight: 300; color: var(--grey-3); font-style: italic; }
 .subtitle { list-style: none; margin-top: calc(var(--unit) * 2.5); font-size: 1rem; font-weight: 300; color: var(--grey-4); line-height: 2; }
 .subtitle li { display: block; }
 .hero-cta { margin-top: calc(var(--unit) * 4); display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.hero-img { position: relative; background: var(--grey-1); overflow: hidden; }
-.hero-img picture { display: block; height: 100%; }
-.hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: grayscale(15%); }
+.hero-img { position: relative; background: var(--black); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.hero-img picture { display: block; width: 100%; height: 100%; }
+/* La foto es mostra a mida real: es redueix si no hi cap, però no s'amplia mai */
+.hero-img img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; filter: grayscale(15%); }
 .hero-img figcaption { position: absolute; bottom: calc(var(--unit) * 1.5); left: calc(var(--unit) * 1.5); font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: rgba(10, 10, 10, 0.6); padding: 0.25rem 0.5rem; }
 
 /* ─── Botons ────────────────────────────────────────────────── */
