@@ -98,6 +98,7 @@ strong { font-weight: 500; color: var(--black); }
 .contact-block p { color: var(--grey-3); font-size: 1rem; }
 .contact-block a { color: var(--white); text-decoration-color: var(--grey-4); }
 .contact-block a:hover { color: var(--red); }
+.contact-address { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; margin-top: calc(var(--unit) * 1); }
 .contact-email { display: block; font-size: 1.5rem; font-weight: 300; font-style: italic; margin: calc(var(--unit) * 2) 0; color: var(--white); text-decoration: none; letter-spacing: -0.01em; }
 .contact-email:hover { color: var(--red); }
 .pinhole-note { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; color: var(--grey-4); margin-top: calc(var(--unit) * 5); text-transform: none; }
