@@ -71,6 +71,14 @@ Per forçar que els navegadors descarreguin fitxers actualitzats, incrementa el 
 - **`llms.txt`**: resum de fets en català (amb versions EN/ES) adreçat a models de llenguatge. Actualitza'l quan canvien els llibres, els projectes o el contacte.
 - **`sitemap.xml`**: recorda actualitzar el `lastmod`.
 - **`robots.txt`**: permet explícitament GPTBot, ClaudeBot, PerplexityBot, Google-Extended i companyia; `/admin/` i `/CLAUDE.md` queden fora.
+- **Preguntes freqüents**: cada resposta es troba en dos llocs del mateix HTML (el text visible i el JSON-LD `FAQPage`). Si en canvies una, canvia les dues o el cercador detectarà una incoherència.
+- **Imatges**: el retrat del hero va en WebP amb el JPEG com a alternativa (`<picture>`), i no s'amplia mai per sobre de la seva mida real (762 px). La targeta per compartir és `img/og-1200x630.jpg`.
+
+### Comprovació ràpida després de publicar
+
+1. Obre `https://about.pocallum.cat/?v=2` — GitHub Pages envia l'HTML amb 10 minuts de cau.
+2. Comprova que l'enllaç de CSS dugui la versió nova (`?v=AAAAAMMDD`).
+3. Valida el JSON-LD (per exemple amb el Rich Results Test de Google).
 
 ## Afegir un nou idioma
 

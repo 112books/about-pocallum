@@ -1,0 +1,5 @@
+# Control horari local (skill gestor-hores) — no es versiona
+.taques/
+
+# Soroll del sistema
+.DS_Store

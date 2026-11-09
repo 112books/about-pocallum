@@ -32,12 +32,12 @@ HTML estàtic pur, sense framework, sense sistema de build, sense Hugo. Desplega
 - **Fonts** — IBM Plex Sans + IBM Plex Mono via Google Fonts
 - **Analítica** — Goatcounter (`about-pocallum.goatcounter.com`), sense cookies
 - **Formulari** — Formspree (`https://formspree.io/f/xnjgrpnn`)
-- **Articles** — RSS via `api.rss2json.com` des de `pocallum.cat/feed/`
+- **Articles** — RSS via `api.rss2json.com` des de `blog.pocallum.cat/feed/` (blog només en català)
 
 ## SEO i assistents d'IA
 
 - **Capçaleres**: `title`, `description`, Open Graph i Twitter Card propis de cada idioma, amb `hreflang` recíprocs i canonical per versió. Qualsevol metadada nova s'ha d'afegir als tres fitxers.
-- **JSON-LD** (`@graph`): `Person`, `WebSite`, `ProfilePage` i `ItemList` de llibres. En afegir un títol cal tocar l'`ItemList` (posició i `numberOfItems`) als tres HTML.
+- **JSON-LD** (`@graph`): `Person`, `WebSite`, `ProfilePage`, `ProfessionalService`, `ItemList` de llibres i `FAQPage`. En afegir un títol cal tocar l'`ItemList` (posició i `numberOfItems`) als tres HTML. Compte amb les comes: el `@graph` és un array i cada node s'ha de separar amb `,`.
 - **Jerarquia de headings**: `h1` únic (el nom) → `h2.section-label` per secció → `h3` per element. Els títols grans dins d'una secció fan servir `h3.section-heading`.
 - **`llms.txt`**: fitxa de fets per a models. Actualitza-la quan canviï el nombre de llibres, l'estat dels projectes o el contacte.
 - **`sitemap.xml`**: actualitzar el `lastmod` quan canviï el contingut.
@@ -77,6 +77,7 @@ Quan es modifiquen `style.css` o `main.js`, cal incrementar el número de versi�
 - **Desktop:** dues columnes — `side-nav` (sticky, esquerra) + `page-content` (dreta)
 - **Mòbil (<720px):** una columna, `side-nav` ocult, `side-nav-mobile` (select) visible
 - `.wrap` limita el contingut a `720px` amb marge automàtic
+- El nav lateral i el selector mòbil comencen amb **Inici** (`#top`), per tornar al capdamunt
 
 ## Seccions (ordre al HTML)
 
@@ -105,7 +106,7 @@ Els `<a data-mailto="1">` no exposen l'adreça al DOM. El clic construeix el `ma
 Modal multi-pas amb 5 passos + pantalla de contacte. Internacionalitzat (CA/EN/ES via `document.documentElement.lang`). Enviament via Formspree amb fallback a `mailto:`.
 
 ### RSS articles
-Carrega els 5 últims articles de `pocallum.cat` detectant l'idioma de la pàgina.
+Carrega els 5 últims articles de `blog.pocallum.cat/feed/`. El blog només existeix en català: les tres versions llegeixen el mateix feed i només canvia el format de la data (`ca-ES`, `es-ES`, `en-GB`). Els feeds antics (`pocallum.cat/feed/`, `/en/feed/`, `/es/feed/`) retornaven 404.
 
 ## Multilingüisme
 
@@ -130,6 +131,33 @@ Cap acció de build — el `git push` és el desplegament.
 
 
 ---
+
+## Contingut i veu
+
+- **Qui soc** va en primera persona i comença amb «Em dic Joan «Linux» Martínez i Serres». El sobrenom va sempre entre cometes angulars («Linux»).
+- No repetir la mateixa informació en dos paràgrafs (festival, 112 Books i docència s'expliquen una sola vegada).
+- Les primeres mencions d'entitats porten enllaç: [112 Books](https://112books.eu), [Llumàtics](https://llumatics.com), [LinuxBCN](https://linuxbcn.com), [Nau Bostik](https://naubostik.com), [pocallum.cat/obra](https://pocallum.cat/obra/).
+- **FAQ**: cada resposta viu en dos llocs del mateix fitxer — el `<p>` visible i el `text` del `FAQPage` al JSON-LD. Cal mantenir-los idèntics; les etiquetes `<a>` només van a la versió visible.
+
+## Assets d'imatge
+
+| Fitxer | Ús |
+|---|---|
+| `img/2026-29-Joan-Linux-by-Anike.webp` | Hero (70 KB), font principal del `<picture>` |
+| `img/2026-29-Joan-Linux-by-Anike.jpg` | Fallback del `<picture>` (211 KB) |
+| `img/og-1200x630.jpg` | `og:image` i `twitter:image` |
+
+- La foto és 762×762: **no s'amplia mai**. `.hero-img img` fa servir `width/height: auto` amb `max-width: min(100%, 800px)`. No hi posar alçades percentuals: van fer desaparèixer la imatge en alguns navegadors.
+- El fons del hero és `#0a0a0a` fix (no `var(--black)`, que s'inverteix en mode fosc).
+- Crèdit obligatori: retrat d'Anike Lamoso (instagram.com/fotosdeanike), citat a la nota del bloc de contacte.
+
+## Verificació abans de pujar
+
+1. JSON-LD vàlid als tres fitxers (cap coma doble ni separador perdut en editar el `@graph`).
+2. Etiquetes HTML balancejades (el `<picture>`, `<figure>` i `<section>` són els punts fràgils).
+3. `?v=` incrementat als tres HTML si s'ha tocat `style.css` o `main.js`.
+4. `llms.txt` i el `lastmod` de `sitemap.xml` al dia si canvien fets (llibres, projectes, contacte).
+5. Després del `git push`, obrir `https://about.pocallum.cat/?v=2`: GitHub Pages envia l'HTML amb `max-age=600`.
 
 ## Control horari
 
