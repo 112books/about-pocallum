@@ -37,7 +37,7 @@ HTML estàtic pur, sense framework, sense sistema de build, sense Hugo. Desplega
 ## SEO i assistents d'IA
 
 - **Capçaleres**: `title`, `description`, Open Graph i Twitter Card propis de cada idioma, amb `hreflang` recíprocs i canonical per versió. Qualsevol metadada nova s'ha d'afegir als tres fitxers.
-- **JSON-LD** (`@graph`): `Person`, `WebSite`, `ProfilePage`, `ProfessionalService`, `ItemList` de llibres i `FAQPage`. En afegir un títol cal tocar l'`ItemList` (posició i `numberOfItems`) als tres HTML. Compte amb les comes: el `@graph` és un array i cada node s'ha de separar amb `,`.
+- **JSON-LD** (`@graph`): `Person` (amb `subjectOf` de premsa), `WebSite`, `ProfilePage`, `ProfessionalService`, `ItemList` de llibres, `ItemList` d'exposicions (`ExhibitionEvent`) i `FAQPage`. En afegir un títol o una exposició cal tocar l'`ItemList` corresponent (posició i `numberOfItems`) als tres HTML. Compte amb les comes: el `@graph` és un array i cada node s'ha de separar amb `,`.
 - **Jerarquia de headings**: `h1` únic (el nom) → `h2.section-label` per secció → `h3` per element. Els títols grans dins d'una secció fan servir `h3.section-heading`.
 - **`llms.txt`**: fitxa de fets per a models. Actualitza-la quan canviï el nombre de llibres, l'estat dels projectes o el contacte.
 - **`sitemap.xml`**: actualitzar el `lastmod` quan canviï el contingut.
@@ -83,16 +83,25 @@ Quan es modifiquen `style.css` o `main.js`, cal incrementar el número de versi�
 
 1. `#qui-soc`
 2. `#el-que-faig` (grid 2×2 de serveis)
-3. `#comunicacio-cultural` (destacat amb borde vermell)
-4. `#projectes-en-curs`
-5. `#obres-publicades`
-6. `#trajectoria`
-7. `#articles` (carregats via RSS)
-8. `#premsa`
-9. `#faq` (preguntes freqüents, amb `FAQPage` al JSON-LD)
-10. `#contacte` (footer negre)
+3. `#trajectoria` (llista any + fita)
+4. `#comunicacio-cultural` (destacat amb borde vermell)
+5. `#projectes-en-curs`
+6. `#obres-publicades`
+7. `#exposicions` (exposicions i presentacions, de la més nova a la més antiga)
+8. `#articles` (carregats via RSS)
+9. `#premsa` (de la més recent a la més antiga)
+10. `#faq` (preguntes freqüents, amb `FAQPage` al JSON-LD)
+11. `#contacte` (footer negre)
 
 Els `id` de les seccions estan traduïts a cada idioma (`#prensa`/`#press`, `#contacto`/`#contact`…). Mantén la coherència entre l'`id`, el nav lateral i el selector mòbil de cada fitxer.
+
+## Exposicions
+
+- Bloc `.expo-list` (data en mono + títol enllaçat + descripció), germà de `.books-list` però amb columna de data de `6.5rem`; col·lapsa a una columna per sota de 480 px.
+- Una entrada per exposició o presentació, **sempre de la més nova a la més antiga**, amb l'any i el mes al davant (`nov. 2024`, `abr.–maig 2026`, `2022`).
+- Cada entrada apareix tres vegades: al `<ul class="expo-list">` de cada idioma, al `ItemList` `#exposicions` del JSON-LD (com a `ExhibitionEvent` amb `startDate`/`endDate`, `location` i `url`) i a `llms.txt`. En afegir-ne una, actualitza els tres llocs i renumera les `position`.
+- Les presentacions de llibre hi entren igual que les exposicions: el títol ja diu què és.
+- `#premsa` també va de més recent a més antiga; les peces noves s'afegeixen a dalt i, si aporten context, al `subjectOf` del `Person` al JSON-LD.
 
 ## Funcionalitats JS (`main.js`)
 
