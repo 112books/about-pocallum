@@ -2,7 +2,7 @@
 
 > Fotògraf professional, editor gràfic i activista cultural a Barcelona. Especialitzat en festivals de música, concerts i arts escèniques. Fundador de 112 Books (2020) i impulsor de Ressona.eu (2026). Resident a la Nau Bostik, Nou Barris, Barcelona.
 
-Last-Updated: 2026-11-08
+Last-Updated: 2026-11-18
 Canonical: https://about.pocallum.cat/
 Language: ca (primary), en (/en/), es (/es/)
 
@@ -64,6 +64,23 @@ Joan Linux Martínez ha estat fotògraf del Barcelona Blues Festival ininterromp
 - 2020: Incoherencias. Una pequeña historia del absurdo (amb Alfonso de Castro, 112 Books)
 - 2020: Pedrola (Wet Shadows) (fotografies analògiques ortocromàtiques, riu Ebre, 112 Books)
 
+## Exposicions i presentacions (de la més nova a la més antiga)
+
+- nov. 2026: Presentació de «40 anys de blues a Barcelona» i inauguració de l'exposició — Centre Cultural Collblanc – La Torrassa, L'Hospitalet de Llobregat. Vídeo de l'acte: https://www.youtube.com/watch?v=7_6aDeOZyhQ
+- abr.–maig 2026: Exposició «40 anys de blues a Barcelona» (18 retrats 8×10", 70×50 cm) — Biblioteca Tecla Sala, L'Hospitalet de Llobregat
+- oct. 2025: Presentació d'«Anónimos, más allá de las apariencias» amb Mario Ortiz — Centre Cívic Pati Llimona, Barcelona
+- set. 2025: Exposició «Preses falses» — Calella Harmònica Festival, platja de Garbí, Calella
+- jul. 2025: Presentació d'«Anónimos» — Casal de Barri de Prosperitat, Barcelona
+- abr. 2025: Posada de llarg d'«Anónimos» i inauguració de l'exposició — Sala Basiana, Nau Bostik, Barcelona
+- nov. 2024: Exposició «Preses falses» al FotoFest Poblenou (presentació l'11 de novembre amb Chino Swingslide) — Casal Can Gili Nou, Barcelona
+- juny 2024: Exposició «Preses falses» — Casal de Barri de Prosperitat, Barcelona
+- març 2024: Exposició i presentació d'«aCarrejant» — Sala Basiana, Nau Bostik, Barcelona
+- nov. 2023: Exposició «Preses falses» al Clot amb Blues — Ateneu del Clot, Barcelona (inauguració 11 de novembre, amb l'exposició de guitarres de Cayuela Leo)
+- jul. 2023: Exposició «Preses falses» al Festival de Blues de Barcelona — Casa de l'Aigua, Trinitat Nova, Barcelona
+- abr.–maig 2023: Exposició «Preses falses» al Primavera in Black — Biblioteca Tecla Sala, L'Hospitalet de Llobregat
+- juny 2022: Presentació de «Preses falses» al 20è Festival de Blues de Barcelona (28 de juny) — Seu del Districte de Nou Barris, Barcelona
+- nov. 2020: Presentació d'«Incoherencias. Una pequeña historia del absurdo» amb Alfonso de Castro — Sala Penya, Nau Bostik, Barcelona
+
 ## Projectes actius (2026)
 
 - 40 anys de Blues a Barcelona: llibre publicat el novembre del 2026 (328 pàgines, 150 retrats). El projecte continua obert: promoció, presentació a L'Hospitalet de Llobregat i exposició fotogràfica que acompanya el llibre.
@@ -118,6 +135,8 @@ Joan Linux Martínez ha estat fotògraf del Barcelona Blues Festival ininterromp
 
 ## Mencions a premsa
 
+- The Spain Reporter: "Blues and boogie festival to feature national and international artists"
+- L'Hdigital: "La Biblioteca Tecla Sala celebra 20 anys de fons de blues"
 - CulturaB: "Retrats de 40 anys de Blues a Barcelona"
 - CulturaB: "Tres llibres que retraten una Barcelona que no t'imagines"
 - CulturaB: "El llibre de retrats que va néixer d'una nevera plena de desconeguts"
@@ -142,5 +161,5 @@ RSS del blog: https://blog.pocallum.cat/feed/
 ## Citació i ús
 
 Aquest fitxer i la pàgina són contingut públic per a cercadors i assistents d'IA.
-Citació suggerida: Joan Linux Martínez i Serres, «about.pocallum.cat», https://about.pocallum.cat/ (consultat el 2026-11-08).
+Citació suggerida: Joan Linux Martínez i Serres, «about.pocallum.cat», https://about.pocallum.cat/ (consultat el 2026-11-18).
 Versions: català (canònica, /), anglès (/en/), castellà (/es/).

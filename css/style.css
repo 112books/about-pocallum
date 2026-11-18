@@ -63,6 +63,12 @@ strong { font-weight: 500; color: var(--black); }
 .book-title { font-size: 0.95rem; font-weight: 500; font-style: italic; margin-bottom: 0.3rem; color: var(--black); }
 .book-desc { font-size: 0.83rem; color: var(--grey-3); line-height: 1.5; }
 
+/* ─── Exposicions ───────────────────────────────────────────── */
+.expo-list { list-style: none; margin-top: calc(var(--unit) * 2); }
+.expo-list li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 3) 0; border-top: 1px solid var(--grey-2); align-items: baseline; }
+.expo-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 300; color: var(--grey-3); letter-spacing: 0.06em; text-transform: uppercase; padding-top: 2px; }
+@media (max-width: 480px) { .expo-list li { grid-template-columns: 1fr; gap: calc(var(--unit) * 0.5); } }
+
 /* ─── Projectes en curs ─────────────────────────────────────── */
 .inprogress-list { list-style: none; margin-top: calc(var(--unit) * 2); }
 .inprogress-list li { display: grid; grid-template-columns: 3rem 1fr; gap: 0 calc(var(--unit) * 3); padding: calc(var(--unit) * 3) 0; border-top: 1px solid var(--grey-2); align-items: baseline; }
